@@ -21,7 +21,7 @@ public class Activator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "at.fhv.pme.byte";
+    public static final String PLUGIN_ID = "at.fhv.pme.tyme";
 
     /**
      * The shared instance.
