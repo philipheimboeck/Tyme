@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Byte Module Runtime Plug-in
-Bundle-SymbolicName: at.fhv.pme.byte
+Bundle-SymbolicName: at.fhv.pme.tyme
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: at.fhv.pme.byte.Activator
 Bundle-Vendor: Eclipse Modeling Project
