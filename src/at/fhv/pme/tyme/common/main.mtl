@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[import at::fhv::pme::tyme::common::entity /]
+
+[template public main(aModel : Model)]
+	
+	[comment @main /]
+	[for (aPackage : Package | aModel.getNestedPackages())]
+		[for (aClass : Class | aPackage.packagedElement->filter(Class))]
+			[aClass.generate()/]
+		[/for]
+	[/for]
+	
+[/template]
