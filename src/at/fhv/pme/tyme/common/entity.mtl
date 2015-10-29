@@ -6,26 +6,26 @@
 	[file (aClass.name.concat('.java'), false)]
 		public class [aClass.name.toUpperFirst()/] {
 			
-			[comment Attributes]
+			[comment Attributes/]
 			[for (p : Property | aClass.attribute) separator('\n')]
 				private [p.type.name/] [p.name/];
 			[/for]
 
-			[comment Getters]
+			[comment Getters/]
 			[for (p : Property | aClass.attribute) separator('\n')]
 				private [p.type.name/] get[p.name.toUpperFirst()/]() {
 					return this.[p.name/];
 				} 
 			[/for]
 
-			[comment Setters]
+			[comment Setters/]
 			[for (p : Property | aClass.attribute) separator('\n')]
 				private void set[p.name.toUpperFirst()/]([p.type.name/] [p.name/]) {
 					this.[p.name/] = [p.name/];
 				} 
 			[/for]
 
-			[comment Operations]
+			[comment Operations/]
 			[for (o : Operation | aClass.ownedOperation) separator('\n')]
 				public [o.type.name/] [o.name/]() {
 					// [protected (o.name)]
