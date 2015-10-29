@@ -2,13 +2,16 @@
 [module main('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
 [import at::fhv::pme::tyme::common::entity /]
+[import at::fhv::pme::tyme::common::uml2service /]
 
 [template public main(aModel : Model)]
 	
 	[comment @main /]
 	[for (aPackage : Package | aModel.getNestedPackages())]
 		[for (aClass : Class | aPackage.packagedElement->filter(Class))]
-			[aClass.generate()/]
+			[if (aClass.hasStereotype('Entity'))]
+				[aClass.generate()/]
+			[/if]
 		[/for]
 	[/for]
 	

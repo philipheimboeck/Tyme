@@ -1,0 +1,8 @@
+[comment encoding = UTF-8 /]
+[module uml2service('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[query public hasStereotype(element : Element, stereotype : String) : Boolean
+	= invoke('at.fhv.pme.tyme.common.services.UML2Services',
+		'hasStereotype(org.eclipse.uml2.uml.Element, java.lang.String)',
+		 Sequence{element, stereotype})
+/]
