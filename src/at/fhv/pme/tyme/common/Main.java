@@ -171,7 +171,6 @@ public class Main extends AbstractAcceleoGenerator {
      *            This will be used to display progress information to the user.
      * @throws IOException
      *             This will be thrown if any of the output files cannot be saved to disk.
-     * @generated
      */
     @Override
     public void doGenerate(Monitor monitor) throws IOException {
@@ -185,19 +184,18 @@ public class Main extends AbstractAcceleoGenerator {
          * note that those instructions may have a significant impact on the performances.
          */
 
-        //org.eclipse.emf.ecore.util.EcoreUtil.resolveAll(model);
+        org.eclipse.emf.ecore.util.EcoreUtil.resolveAll(model);
 
         /*
          * If you want to check for potential errors in your models before the launch of the generation, you
          * use the code below.
          */
-
-        //if (model != null && model.eResource() != null) {
-        //    List<org.eclipse.emf.ecore.resource.Resource.Diagnostic> errors = model.eResource().getErrors();
-        //    for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : errors) {
-        //        System.err.println(diagnostic.toString());
-        //    }
-        //}
+        if (model != null && model.eResource() != null) {
+            List<org.eclipse.emf.ecore.resource.Resource.Diagnostic> errors = model.eResource().getErrors();
+            for (org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : errors) {
+                System.err.println(diagnostic.toString());
+            }
+        }
 
         super.doGenerate(monitor);
     }

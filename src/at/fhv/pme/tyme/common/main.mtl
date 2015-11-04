@@ -9,9 +9,7 @@
 	[comment @main /]
 	[for (aPackage : Package | aModel.getNestedPackages())]
 		[for (aClass : Class | aPackage.packagedElement->filter(Class))]
-			[if (aClass.hasStereotype('Entity'))]
-				[aClass.generate()/]
-			[/if]
+			[aClass.generate()/]
 		[/for]
 	[/for]
 	
