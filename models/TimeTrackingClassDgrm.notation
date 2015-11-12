@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_rjBswIMREeWnYoTeH9KJag" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_rjBswIMREeWnYoTeH9KJag" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_0arp8IMREeWnYoTeH9KJag" type="2007">
     <children xmi:type="notation:DecorationNode" xmi:id="_0asRAIMREeWnYoTeH9KJag" type="5026"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_0asRAYMREeWnYoTeH9KJag" type="7016">
@@ -75,6 +75,22 @@
         <element xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_BV4VEIMSEeWnYoTeH9KJag"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWBfAYMSEeWnYoTeH9KJag" x="375" y="61"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_TMVPMIkmEeW2lPo0wJq9VQ" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_TMVPMYkmEeW2lPo0wJq9VQ" showTitle="true"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_TMVPM4kmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_2iHQgIMREeWnYoTeH9KJag"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMVPMokmEeW2lPo0wJq9VQ" x="231" y="35"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_ULaGkIkmEeW2lPo0wJq9VQ" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_ULaGkYkmEeW2lPo0wJq9VQ" showTitle="true"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_ULaGk4kmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+          <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_BV4VEIMSEeWnYoTeH9KJag"/>
+        </styles>
+        <element xsi:nil="true"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ULaGkokmEeW2lPo0wJq9VQ" x="575" y="61"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_0asRAoMREeWnYoTeH9KJag"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0asRA4MREeWnYoTeH9KJag"/>
     </children>
@@ -87,4 +103,24 @@
     <owner xmi:type="uml:Model" href="TimeTrackingClassDgrm.uml#_riF4oIMREeWnYoTeH9KJag"/>
   </styles>
   <element xmi:type="uml:Model" href="TimeTrackingClassDgrm.uml#_riF4oIMREeWnYoTeH9KJag"/>
+  <edges xmi:type="notation:Connector" xmi:id="_TMVPNIkmEeW2lPo0wJq9VQ" type="StereotypeCommentLink" source="_2iMwEIMREeWnYoTeH9KJag" target="_TMVPMIkmEeW2lPo0wJq9VQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TMVPNYkmEeW2lPo0wJq9VQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_TMV2QokmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_2iHQgIMREeWnYoTeH9KJag"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TMVPNokmEeW2lPo0wJq9VQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMV2QIkmEeW2lPo0wJq9VQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMV2QYkmEeW2lPo0wJq9VQ"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ULaGlIkmEeW2lPo0wJq9VQ" type="StereotypeCommentLink" source="_BWBfAIMSEeWnYoTeH9KJag" target="_ULaGkIkmEeW2lPo0wJq9VQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ULaGlYkmEeW2lPo0wJq9VQ"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_ULaGmYkmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_BV4VEIMSEeWnYoTeH9KJag"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ULaGlokmEeW2lPo0wJq9VQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ULaGl4kmEeW2lPo0wJq9VQ"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ULaGmIkmEeW2lPo0wJq9VQ"/>
+  </edges>
 </notation:Diagram>

@@ -4,36 +4,39 @@
 [template public generate(aClass : Class)]
 
 	[file (aClass.name.concat('.java'), false)]
-		public class [aClass.name.toUpperFirst()/] {
-			
-			[comment Attributes/]
-			[for (p : Property | aClass.attribute) separator('\n')]
-				private [p.type.name/] [p.name/];
-			[/for]
+/**
+ * Entity
+ */
+public class [aClass.name.toUpperFirst()/] {
 
-			[comment Getters/]
-			[for (p : Property | aClass.attribute) separator('\n')]
-				private [p.type.name/] get[p.name.toUpperFirst()/]() {
-					return this.[p.name/];
-				} 
-			[/for]
+	[comment Attributes/]
+	[for (p : Property | aClass.attribute) separator('\n')]
+		private [p.type.name/] [p.name/];
+	[/for]
 
-			[comment Setters/]
-			[for (p : Property | aClass.attribute) separator('\n')]
-				private void set[p.name.toUpperFirst()/]([p.type.name/] [p.name/]) {
-					this.[p.name/] = [p.name/];
-				} 
-			[/for]
+	[comment Getters/]
+	[for (p : Property | aClass.attribute) separator('\n')]
+		private [p.type.name/] get[p.name.toUpperFirst()/]() {
+			return this.[p.name/];
+		} 
+	[/for]
 
-			[comment Operations/]
-			[for (o : Operation | aClass.ownedOperation) separator('\n')]
-				public [o.type.name/] [o.name/]() {
-					// [protected (o.name)]
-					// TODO Implement
-					// [/protected]
-				}
-			[/for]
+	[comment Setters/]
+	[for (p : Property | aClass.attribute) separator('\n')]
+		private void set[p.name.toUpperFirst()/]([p.type.name/] [p.name/]) {
+			this.[p.name/] = [p.name/];
+		} 
+	[/for]
+
+	[comment Operations/]
+	[for (o : Operation | aClass.ownedOperation) separator('\n')]
+		public [o.type.name/] [o.name/]() {
+			// [protected (o.name)]
+			// TODO Implement
+			// [/protected]
 		}
-	[/file]
+	[/for]
+}
+[/file]
 
 [/template]
