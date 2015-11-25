@@ -36,7 +36,6 @@ java.util.Collection<[type.toJavaType()/]>
 [/template]
 
 [template public toJavaType(type:Type) post (trim())]
-[type/]
 [if (type.namespace.name='datatype' and getProperty('java.typeconversion.'+type.name)<>'')]
 	[getProperty('java.typeconversion.'+type.name)/]
 [else]
