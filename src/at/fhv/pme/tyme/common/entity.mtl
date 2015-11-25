@@ -27,21 +27,21 @@ public class [aClass.name.toUpperFirst()/] {
 
 	[comment Getters/]
 	[for (p : Property | aClass.attribute) separator('\n')]
-		private [p.type.toJavaType()/] get[p.name.toUpperFirst()/]() {
+		public [p.type.toJavaType()/] get[p.name.toUpperFirst()/]() {
 			return this.[p.name/];
 		} 
 	[/for]
 
 	[comment Setters/]
 	[for (p : Property | aClass.attribute) separator('\n')]
-		private void set[p.name.toUpperFirst()/]([p.type.name/] [p.name/]) {
+		public void set[p.name.toUpperFirst()/]([p.type.name/] [p.name/]) {
 			this.[p.name/] = [p.name/];
 		} 
 	[/for]
 
 	[comment Operations/]
 	[for (o : Operation | aClass.ownedOperation) separator('\n')]
-		public [o.type.toJavaType()/] [o.name/]() {
+		[o.visibility/] [if o.isStatic]static [/if][o.generateReturn()/] [o.name/]([o.generateRawParameters()/]) {
 			// [protected (o.name)]
 			// TODO Implement
 			// [/protected]
