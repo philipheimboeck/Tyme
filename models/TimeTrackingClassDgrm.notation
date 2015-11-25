@@ -75,21 +75,21 @@
         <element xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_BV4VEIMSEeWnYoTeH9KJag"/>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BWBfAYMSEeWnYoTeH9KJag" x="375" y="61"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_TMVPMIkmEeW2lPo0wJq9VQ" type="StereotypeComment">
-        <styles xmi:type="notation:TitleStyle" xmi:id="_TMVPMYkmEeW2lPo0wJq9VQ" showTitle="true"/>
-        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_TMVPM4kmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+      <children xmi:type="notation:Shape" xmi:id="_p9iGIJOaEeWj7fGMGOFwiA" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_p9iGIZOaEeWj7fGMGOFwiA" showTitle="true"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_p9iGI5OaEeWj7fGMGOFwiA" name="BASE_ELEMENT">
           <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_2iHQgIMREeWnYoTeH9KJag"/>
         </styles>
         <element xsi:nil="true"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TMVPMokmEeW2lPo0wJq9VQ" x="231" y="35"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_p9iGIpOaEeWj7fGMGOFwiA" x="231" y="35"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_ULaGkIkmEeW2lPo0wJq9VQ" type="StereotypeComment">
-        <styles xmi:type="notation:TitleStyle" xmi:id="_ULaGkYkmEeW2lPo0wJq9VQ" showTitle="true"/>
-        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_ULaGk4kmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+      <children xmi:type="notation:Shape" xmi:id="_rY5Q4JOaEeWj7fGMGOFwiA" type="StereotypeComment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_rY5Q4ZOaEeWj7fGMGOFwiA" showTitle="true"/>
+        <styles xmi:type="notation:EObjectValueStyle" xmi:id="_rY538JOaEeWj7fGMGOFwiA" name="BASE_ELEMENT">
           <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_BV4VEIMSEeWnYoTeH9KJag"/>
         </styles>
         <element xsi:nil="true"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ULaGkokmEeW2lPo0wJq9VQ" x="575" y="61"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rY5Q4pOaEeWj7fGMGOFwiA" x="575" y="61"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_0asRAoMREeWnYoTeH9KJag"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0asRA4MREeWnYoTeH9KJag"/>
@@ -103,24 +103,24 @@
     <owner xmi:type="uml:Model" href="TimeTrackingClassDgrm.uml#_riF4oIMREeWnYoTeH9KJag"/>
   </styles>
   <element xmi:type="uml:Model" href="TimeTrackingClassDgrm.uml#_riF4oIMREeWnYoTeH9KJag"/>
-  <edges xmi:type="notation:Connector" xmi:id="_TMVPNIkmEeW2lPo0wJq9VQ" type="StereotypeCommentLink" source="_2iMwEIMREeWnYoTeH9KJag" target="_TMVPMIkmEeW2lPo0wJq9VQ">
-    <styles xmi:type="notation:FontStyle" xmi:id="_TMVPNYkmEeW2lPo0wJq9VQ"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_TMV2QokmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+  <edges xmi:type="notation:Connector" xmi:id="_p9itMJOaEeWj7fGMGOFwiA" type="StereotypeCommentLink" source="_2iMwEIMREeWnYoTeH9KJag" target="_p9iGIJOaEeWj7fGMGOFwiA">
+    <styles xmi:type="notation:FontStyle" xmi:id="_p9itMZOaEeWj7fGMGOFwiA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_p9jUQZOaEeWj7fGMGOFwiA" name="BASE_ELEMENT">
       <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_2iHQgIMREeWnYoTeH9KJag"/>
     </styles>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TMVPNokmEeW2lPo0wJq9VQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMV2QIkmEeW2lPo0wJq9VQ"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TMV2QYkmEeW2lPo0wJq9VQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_p9itMpOaEeWj7fGMGOFwiA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p9itM5OaEeWj7fGMGOFwiA"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p9jUQJOaEeWj7fGMGOFwiA"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_ULaGlIkmEeW2lPo0wJq9VQ" type="StereotypeCommentLink" source="_BWBfAIMSEeWnYoTeH9KJag" target="_ULaGkIkmEeW2lPo0wJq9VQ">
-    <styles xmi:type="notation:FontStyle" xmi:id="_ULaGlYkmEeW2lPo0wJq9VQ"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_ULaGmYkmEeW2lPo0wJq9VQ" name="BASE_ELEMENT">
+  <edges xmi:type="notation:Connector" xmi:id="_rY538ZOaEeWj7fGMGOFwiA" type="StereotypeCommentLink" source="_BWBfAIMSEeWnYoTeH9KJag" target="_rY5Q4JOaEeWj7fGMGOFwiA">
+    <styles xmi:type="notation:FontStyle" xmi:id="_rY538pOaEeWj7fGMGOFwiA"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_rY539pOaEeWj7fGMGOFwiA" name="BASE_ELEMENT">
       <eObjectValue xmi:type="uml:Class" href="TimeTrackingClassDgrm.uml#_BV4VEIMSEeWnYoTeH9KJag"/>
     </styles>
     <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ULaGlokmEeW2lPo0wJq9VQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ULaGl4kmEeW2lPo0wJq9VQ"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ULaGmIkmEeW2lPo0wJq9VQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rY5385OaEeWj7fGMGOFwiA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rY539JOaEeWj7fGMGOFwiA"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rY539ZOaEeWj7fGMGOFwiA"/>
   </edges>
 </notation:Diagram>

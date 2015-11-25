@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RootElement="http:///schemas/RootElement/_iAUA4IkmEeW2lPo0wJq9VQ/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/RootElement/_iAUA4IkmEeW2lPo0wJq9VQ/2 ../src/at/fhv/pme/tyme/model.profile.uml#_iAUA4YkmEeW2lPo0wJq9VQ">
-  <uml:Model xmi:id="_riF4oIMREeWnYoTeH9KJag" name="RootElement">
-    <packagedElement xmi:type="uml:Package" xmi:id="_0amxcIMREeWnYoTeH9KJag" name="TimeTrackingApplication">
-      <packagedElement xmi:type="uml:Class" xmi:id="_2iHQgIMREeWnYoTeH9KJag" name="Timetrack" visibility="package">
+  <uml:Model xmi:id="_riF4oIMREeWnYoTeH9KJag" name="model">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_3g9kAJOcEeWj7fGMGOFwiA">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_7OYQ8JOcEeWj7fGMGOFwiA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_9ZxKcJOcEeWj7fGMGOFwiA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_FqaK8JOdEeWj7fGMGOFwiA">
+      <importedPackage xmi:type="uml:Profile" href="../src/at/fhv/pme/tyme/model.profile.uml#_0TXMYIkkEeW2lPo0wJq9VQ"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_0amxcIMREeWnYoTeH9KJag" name="at.fhv.pme.tyme.entities">
+      <packagedElement xmi:type="uml:Class" xmi:id="_2iHQgIMREeWnYoTeH9KJag" name="Timetrack" visibility="public">
         <ownedAttribute xmi:type="uml:Property" xmi:id="_4aSTEIMREeWnYoTeH9KJag" name="id">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedAttribute>
@@ -17,15 +29,10 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_DbIKUIMSEeWnYoTeH9KJag" name="projectName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_dNhscJOcEeWj7fGMGOFwiA" value=""/>
         </ownedAttribute>
       </packagedElement>
     </packagedElement>
-    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_rkZlwIMREeWnYoTeH9KJag">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rkcCAIMREeWnYoTeH9KJag" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
-      </eAnnotations>
-      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
-    </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ruq-YIkmEeW2lPo0wJq9VQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_nTxMoIkoEeW2lPo0wJq9VQ" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_nTxMoYkoEeW2lPo0wJq9VQ" key="Version" value="0.0.3"/>
@@ -40,6 +47,6 @@
       <appliedProfile xmi:type="uml:Profile" href="../src/at/fhv/pme/tyme/model.profile.uml#_0TXMYIkkEeW2lPo0wJq9VQ"/>
     </profileApplication>
   </uml:Model>
-  <RootElement:Entity xmi:id="_TL-C0IkmEeW2lPo0wJq9VQ" base_Class="_2iHQgIMREeWnYoTeH9KJag"/>
-  <RootElement:Entity xmi:id="_ULEIUIkmEeW2lPo0wJq9VQ" base_Class="_BV4VEIMSEeWnYoTeH9KJag"/>
+  <RootElement:Entity xmi:id="_p8sYoJOaEeWj7fGMGOFwiA" base_Class="_2iHQgIMREeWnYoTeH9KJag"/>
+  <RootElement:Entity xmi:id="_rYPwoJOaEeWj7fGMGOFwiA" base_Class="_BV4VEIMSEeWnYoTeH9KJag"/>
 </xmi:XMI>
