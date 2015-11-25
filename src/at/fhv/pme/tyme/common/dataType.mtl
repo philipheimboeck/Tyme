@@ -10,7 +10,7 @@ class.ownedOperation.ownedParameter->union(if(class.ownedOperation.returnResult(
 /]
 
 [query public operationsParametersTypes(class : Class):Sequence(Classifier) = 
-class.operationsParameters().type->filter(Classifier)->select(not (name.endsWith('String')) and not (name.endsWith('Integer')) and not (name.endsWith('Float')) and not (name.endsWith('Long')) and not (name.endsWith('Double')) and not (name.endsWith('Boolean')) and not (name.startsWith('byte')) and not (name.endsWith('Object')) and not (name.endsWith('integer')) and not (name.endsWith('float')) and not (name.endsWith('long')) and not (name.endsWith('double')) and not (name.endsWith('boolean')))->asOrderedSet()->asSequence()
+class.operationsParameters().type->filter(Classifier)->select(not (name.endsWith('String')) and not (name.endsWith('Integer')) and not (name.endsWith('Float')) and not (name.endsWith('Long')) and not (name.endsWith('Double')) and not (name.endsWith('Boolean')) and not (name.startsWith('byte')) and not (name.endsWith('Object')) and not (name.endsWith('integer')) and not (name.endsWith('int')) and not (name.endsWith('float')) and not (name.endsWith('long')) and not (name.endsWith('double')) and not (name.endsWith('boolean')))->asOrderedSet()->asSequence()
 /]
 
 [template public getCompleteName(namedElement:NamedElement) post (trim())]

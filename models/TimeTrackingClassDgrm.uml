@@ -66,9 +66,9 @@
         </ownedOperation>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_z0kCYJOqEeW9JJzMjfAEKA" name="Package1">
+    <packagedElement xmi:type="uml:Package" xmi:id="_z0kCYJOqEeW9JJzMjfAEKA" name="at.fhv.pme.tyme.controller">
       <packagedElement xmi:type="uml:Class" xmi:id="_2csiQJOqEeW9JJzMjfAEKA" name="Controller">
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_F6dQwJOrEeW9JJzMjfAEKA" name="deleteTimeTrack">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_F6dQwJOrEeW9JJzMjfAEKA" name="deleteTimeTrack" concurrency="concurrent">
           <ownedComment xmi:type="uml:Comment" xmi:id="_Q3vg4JOvEeW9JJzMjfAEKA">
             <annotatedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             <body>Hallo</body>
