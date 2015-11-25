@@ -22,7 +22,7 @@ public class [aClass.name.toUpperFirst()/] {
 
 	[comment Attributes/]
 	[for (p : Property | aClass.attribute) separator('\n')]
-		private [p.type.toJavaType()/] [p.name/];
+		[p.visibility/] [if p.isStatic]static [/if][p.type.toJavaType()/] [p.name/];
 	[/for]
 
 	[comment Getters/]
