@@ -41,6 +41,12 @@ public class [aClass.name.toUpperFirst()/] {
 
 	[comment Operations/]
 	[for (o : Operation | aClass.ownedOperation) separator('\n')]
+  		/**
+         * [o.name/]
+		[for (c : Comment | o.ownedComment)]
+		 * [c._body/]
+		[/for]
+		*/
 		[o.visibility/] [if o.isStatic]static [/if][o.generateReturn()/] [o.name/]([o.generateRawParameters()/]) {
 			// [protected (o.name)]
 			// TODO Implement
