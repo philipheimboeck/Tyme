@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_0TXMYIkkEeW2lPo0wJq9VQ" name="RootElement" metaclassReference="_Hhc8cIkmEeW2lPo0wJq9VQ">
+<uml:Profile xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_0TXMYIkkEeW2lPo0wJq9VQ" name="profile" metaclassReference="_Hhc8cIkmEeW2lPo0wJq9VQ">
   <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4ERcwIklEeW2lPo0wJq9VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_myG2gJObEeWj7fGMGOFwiA" name="profile" nsURI="http:///schemas/profile/_myEaQJObEeWj7fGMGOFwiA/3" nsPrefix="profile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_myIEoZObEeWj7fGMGOFwiA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_myIrsJObEeWj7fGMGOFwiA" key="Version" value="0.0.4"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_myIrsZObEeWj7fGMGOFwiA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_myIrspObEeWj7fGMGOFwiA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_myIrs5ObEeWj7fGMGOFwiA" key="Date" value="2015-11-25"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_myIrtJObEeWj7fGMGOFwiA" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_myG2gZObEeWj7fGMGOFwiA" name="Entity">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_myG2gpObEeWj7fGMGOFwiA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_47_H4IklEeW2lPo0wJq9VQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_myG2g5ObEeWj7fGMGOFwiA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_iAUA4YkmEeW2lPo0wJq9VQ" name="RootElement" nsURI="http:///schemas/RootElement/_iAUA4IkmEeW2lPo0wJq9VQ/2" nsPrefix="RootElement">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iAUn8YkmEeW2lPo0wJq9VQ" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iAUn8okmEeW2lPo0wJq9VQ" key="Version" value="0.0.3"/>
@@ -47,6 +62,9 @@
   <elementImport xmi:type="uml:ElementImport" xmi:id="_Hhc8cIkmEeW2lPo0wJq9VQ" alias="Class">
     <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
   </elementImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_h4dnAJObEeWj7fGMGOFwiA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_47_H4IklEeW2lPo0wJq9VQ" name="Entity">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_JN2z4IkmEeW2lPo0wJq9VQ" name="base_Class" association="_JNyicIkmEeW2lPo0wJq9VQ">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
