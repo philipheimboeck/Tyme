@@ -4,6 +4,7 @@
 [import at::fhv::pme::tyme::common::entity /]
 [import at::fhv::pme::tyme::common::uml2service /]
 
+
 [template public main(aModel : Model)]
 	
 	[comment @main /]
@@ -11,6 +12,9 @@
 		[for (aClass : Class | aPackage.packagedElement->filter(Class))]
 			[if (aClass.hasStereotype('Entity'))]
 				[aClass.generate()/]
+			[/if]
+			[if (aClass.hasStereotype('UserInterface'))]
+				[aClass.htmlForm()/]
 			[/if]
 		[/for]
 	[/for]

@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[module ui('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import at::fhv::pme::tyme::common::uml2service /]
+[import at::fhv::pme::tyme::common::dataType /]
+
+
+
+[template public htmlForm(aClass : Class)]
+[file (aClass.name.concat('.html'), false)]
+
+<html>
+<head><title>Fix defined page Title</title><head>
+<form method="" onsubmit="javascript:;">
+
+	[comment Attributes/]
+	[for (p : Property | aClass.attribute) separator('\n')]
+		[p.visibility/] [if p.isStatic]static [/if][p.type.toJavaType()/] [p.name/];
+	[/for]
+
+
+</form>
+</html>
+
+[/file]
+[/template]
