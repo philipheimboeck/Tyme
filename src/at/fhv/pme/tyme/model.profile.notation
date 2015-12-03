@@ -71,6 +71,10 @@
   <children xmi:type="notation:Shape" xmi:id="_FRjVoJmpEeWuTPlhAergsA" type="1026">
     <children xmi:type="notation:DecorationNode" xmi:id="_FRjVopmpEeWuTPlhAergsA" type="1034"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_FRj8sJmpEeWuTPlhAergsA" type="1071">
+      <children xmi:type="notation:Shape" xmi:id="_2TrCQJnCEeWuTPlhAergsA" type="3002">
+        <element xmi:type="uml:Property" href="model.profile.uml#_2ThRQJnCEeWuTPlhAergsA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_2TrCQZnCEeWuTPlhAergsA"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_FRj8sZmpEeWuTPlhAergsA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_FRj8spmpEeWuTPlhAergsA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_FRj8s5mpEeWuTPlhAergsA"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/_UnHDAJmsEeWuTPlhAergsA/8" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/_UnHDAJmsEeWuTPlhAergsA/8 ../src/at/fhv/pme/tyme/model.profile.uml#_UnHDAZmsEeWuTPlhAergsA">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/_6aLkoJnCEeWuTPlhAergsA/9" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/_6aLkoJnCEeWuTPlhAergsA/9 ../src/at/fhv/pme/tyme/model.profile.uml#_6aMLsJnCEeWuTPlhAergsA">
   <uml:Model xmi:id="_riF4oIMREeWnYoTeH9KJag" name="model">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_3g9kAJOcEeWj7fGMGOFwiA">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -131,15 +131,15 @@
       <ownedEnd xmi:type="uml:Property" xmi:id="_mF1Ok5mqEeWuTPlhAergsA" name="timetrack" type="_2iHQgIMREeWnYoTeH9KJag" association="_mF0ngJmqEeWuTPlhAergsA"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ruq-YIkmEeW2lPo0wJq9VQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Wuls4JmsEeWuTPlhAergsA" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wuls4ZmsEeWuTPlhAergsA" key="Version" value="0.0.9"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wuls4pmsEeWuTPlhAergsA" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wuls45msEeWuTPlhAergsA" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wuls5JmsEeWuTPlhAergsA" key="Date" value="2015-12-03"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Wuls5ZmsEeWuTPlhAergsA" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-GKHIJnCEeWuTPlhAergsA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHIZnCEeWuTPlhAergsA" key="Version" value="0.0.10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHIpnCEeWuTPlhAergsA" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHI5nCEeWuTPlhAergsA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHJJnCEeWuTPlhAergsA" key="Date" value="2015-12-03"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHJZnCEeWuTPlhAergsA" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RurlcIkmEeW2lPo0wJq9VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#_UnHDAZmsEeWuTPlhAergsA"/>
+        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#_6aMLsJnCEeWuTPlhAergsA"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../src/at/fhv/pme/tyme/model.profile.uml#_0TXMYIkkEeW2lPo0wJq9VQ"/>
     </profileApplication>
@@ -151,11 +151,11 @@
   <profile:RestMethod xmi:id="_b_ssEJmqEeWuTPlhAergsA" base_Operation="_KDBooJOrEeW9JJzMjfAEKA" path="searchTrack"/>
   <profile:RestMethod xmi:id="_ctN5YJmqEeWuTPlhAergsA" base_Operation="_y42yoJOrEeW9JJzMjfAEKA" path="getTracks"/>
   <profile:Entity xmi:id="_lhqKgJmqEeWuTPlhAergsA" base_Class="_kUcJcJmqEeWuTPlhAergsA"/>
-  <profile:Controller xmi:id="_wixHgJmqEeWuTPlhAergsA" base_Class="_2csiQJOqEeW9JJzMjfAEKA"/>
-  <profile:PathParam xmi:id="_O0BfgJmrEeWuTPlhAergsA" name="int" base_Parameter="_ewmD4JOrEeW9JJzMjfAEKA"/>
+  <profile:Controller xmi:id="_wixHgJmqEeWuTPlhAergsA" base_Class="_2csiQJOqEeW9JJzMjfAEKA" path="tyme"/>
+  <profile:PathParam xmi:id="_O0BfgJmrEeWuTPlhAergsA" name="track" base_Parameter="_ewmD4JOrEeW9JJzMjfAEKA"/>
   <profile:FormParam xmi:id="_hLtBcJmrEeWuTPlhAergsA" name="user" base_Parameter="_jz93IJOrEeW9JJzMjfAEKA"/>
-  <profile:FormParam xmi:id="_sMkt4JmrEeWuTPlhAergsA" base_Parameter="_meFUAJOrEeW9JJzMjfAEKA"/>
-  <profile:FormParam xmi:id="_0wFAAJmrEeWuTPlhAergsA" base_Parameter="_qC8h4JOrEeW9JJzMjfAEKA"/>
-  <profile:FormParam xmi:id="_2q_NgJmrEeWuTPlhAergsA" base_Parameter="_sFdzQJOrEeW9JJzMjfAEKA"/>
-  <profile:QueryParam xmi:id="_qJUnQJmsEeWuTPlhAergsA" base_Parameter="_wH_NgJOrEeW9JJzMjfAEKA"/>
+  <profile:FormParam xmi:id="_sMkt4JmrEeWuTPlhAergsA" name="start" base_Parameter="_meFUAJOrEeW9JJzMjfAEKA"/>
+  <profile:FormParam xmi:id="_0wFAAJmrEeWuTPlhAergsA" name="end" base_Parameter="_qC8h4JOrEeW9JJzMjfAEKA"/>
+  <profile:FormParam xmi:id="_2q_NgJmrEeWuTPlhAergsA" name="description" base_Parameter="_sFdzQJOrEeW9JJzMjfAEKA"/>
+  <profile:QueryParam xmi:id="_qJUnQJmsEeWuTPlhAergsA" name="search" base_Parameter="_wH_NgJOrEeW9JJzMjfAEKA"/>
 </xmi:XMI>

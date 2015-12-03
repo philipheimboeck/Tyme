@@ -2,6 +2,8 @@
 [module main('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
 [import at::fhv::pme::tyme::common::entity /]
+[import at::fhv::pme::tyme::common::ui /]
+[import at::fhv::pme::tyme::common::controller /]
 [import at::fhv::pme::tyme::common::uml2service /]
 
 
@@ -15,6 +17,9 @@
 			[/if]
 			[if (aClass.hasStereotype('UserInterface'))]
 				[aClass.htmlForm()/]
+			[/if]
+			[if (aClass.hasStereotype('Controller'))]
+				[aClass.generateController()/]
 			[/if]
 		[/for]
 	[/for]

@@ -52,7 +52,27 @@ java.util.Collection<[type.toJavaType()/]>
 [/template]
 
 [template public genRawDeclare(parameter:Parameter)]
-[parameter.toJavaType()/] [name.toLowerFirst()/]
+[parameter.createAnnotations()/][parameter.toJavaType()/] [name.toLowerFirst()/]
+[/template]
+
+[template public createAnnotations(parameter:Parameter)]
+[createAnnotationFormParam()/][createAnnotationPathParam()/][createAnnotationHeaderParam()/][createAnnotationQueryParam()/]
+[/template]
+
+[template public createAnnotationFormParam(parameter:Parameter)]
+[if (parameter.hasStereotype('FormParam'))]@FormParam("[parameter.getValue(parameter.getAppliedStereotype('profile::FormParam'), 'name')/]") [/if]
+[/template]
+
+[template public createAnnotationPathParam(parameter:Parameter)]
+[if (parameter.hasStereotype('PathParam'))]@PathParam("[parameter.getValue(parameter.getAppliedStereotype('profile::PathParam'), 'name')/]") [/if]
+[/template]
+
+[template public createAnnotationHeaderParam(parameter:Parameter)]
+[if (parameter.hasStereotype('HeaderParam'))]@HeaderParam("[parameter.getValue(parameter.getAppliedStereotype('profile::HeaderParam'), 'name')/]") [/if]
+[/template]
+
+[template public createAnnotationQueryParam(parameter:Parameter)]
+[if (parameter.hasStereotype('QueryParam'))]@QueryParam("[parameter.getValue(parameter.getAppliedStereotype('profile::QueryParam'), 'name')/]") [/if]
 [/template]
 
 [template public generateCliOptions(operation:Operation)]

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Parameter;
@@ -81,5 +82,19 @@ public class UML2Services {
 				parListFiltered.add(par);
 		}
 		return parListFiltered;		
+	}
+	
+	/**
+	 * Returns the HTTP Method Name
+	 * @param operation
+	 * @return GET, POST, DELETE, PUT or an empty string
+	 */
+	public String getHTTPMethodName(Operation operation) {
+		Object object = operation.getValue(operation.getAppliedStereotype("profile::RestMethod"), "method");
+		if(object == null) {
+			return "";
+		}
+		
+		return ((EnumerationLiteral) object).getName();
 	}
 }

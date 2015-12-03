@@ -1,19 +1,20 @@
 [comment encoding = UTF-8 /]
-[module entity('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module controller('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 [import at::fhv::pme::tyme::common::uml2service /]
 [import at::fhv::pme::tyme::common::dataType /]
 [import at::fhv::pme::tyme::common::classGenerator /]
 
-[template public generate(aClass : Class)]
+[template public generateController(aClass : Class)]
  
-
 [file (aClass.namespace.toPath().concat(aClass.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
 [aClass.generateImports()/]
+import javax.ws.rs.*;
 
 /**
  * [aClass.name/]
  */
+@Path("[aClass.getValue(aClass.getAppliedStereotype('profile::Controller'), 'path')/]")
 public class [aClass.name.toUpperFirst()/] {
 
 	[aClass.generateProperties()/]

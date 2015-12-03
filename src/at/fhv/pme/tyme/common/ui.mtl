@@ -7,7 +7,7 @@
 
 
 [template public htmlForm(aClass : Class)]
-[file (aClass.name.concat('.html'), false)]
+[file (aClass.namespace.toPath().concat(aClass.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
 
 <html>
 <head><title>Fix defined page Title</title><head>
