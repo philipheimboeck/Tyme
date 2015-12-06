@@ -52,14 +52,16 @@
 <div class="content">
 	[comment Form /]
 	<div id="forms">
-		<form method="" action="javascript:;" onsubmit="javascript:submit();">
-		[for (p : Property | aClass.attribute) separator('<br/>\n')]
+		<form method="" action="javascript:;" onsubmit="submit();" class="form-horizontal col-sm-6 col-centered">
+		[for (p : Property | aClass.attribute) separator('\n')]
 		[if (p.hasStereotype('FormElement'))]
 		[if (p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label') <> null)]
 		<div class="form-group">
-			<label for="[p.name/]">[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label')/]</label>
+			<label for="[p.name/]" class="col-sm-2 control-label">[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label')/]</label>
 			[/if]
-			<input class="form-control" type="[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'type')/]" name="[p.name/]" id="[p.name/]"/>
+			<div class="col-sm-10">
+				<input class="form-control" type="[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'type')/]" name="[p.name/]" id="[p.name/]"/>
+			</div>
 		</div>
 		[/if]
 		[/for]
@@ -99,7 +101,7 @@ function submit() {
 }
 
 [for (o : Operation | aClass.ownedOperation) separator('\n')]
-function [o.name/]() {
+function [o.name/]([o.generateJSParameters()/]) {
 	//[protected (o.name)]
 	//	TODO: Implement
 	console.log("[o.name/]");
