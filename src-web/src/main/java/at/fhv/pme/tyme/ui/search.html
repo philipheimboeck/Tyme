@@ -48,20 +48,24 @@
 
 <div class="content">
 	<div id="forms">
-		<form method="" action="javascript:;" onsubmit="javascript:submit();">
+		<form method="" action="javascript:;" onsubmit="processForm();" class="form-horizontal col-sm-6 col-centered">
 		<div class="form-group">
-			<label for="search">Suchbegriff</label>
-			<input class="form-control" type="text" name="search" id="search"/>
+			<label for="search" class="col-sm-2 control-label">Suchbegriff</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="text" name="search" id="search"/>
+			</div>
 		</div>
-<br/>
+
 		<div class="form-group">
-			<label for="submit">Suchen</label>
-			<input class="form-control" type="submit" name="submit" id="submit"/>
+			<label for="submit" class="col-sm-2 control-label">Suchen</label>
+			<div class="col-sm-10">
+				<input class="form-control" type="submit" name="submit" id="submit"/>
+			</div>
 		</div>
-<br/>
-<br/>
-<br/>
-<br/>
+
+
+
+
 		</form>
 	</div>
 	
@@ -97,34 +101,36 @@ $(function() {
 	//End of user code
 });
 
-function submit() {
-	//Start of user code submit
-	$.ajax({
-		dataType: "json",
-		url: "http://localhost:8080/tyme/searchTrack",
-		data: {search: encodeURIComponent($('#search').val()) },
-		success: function (data) {
-			$.each(data, function (idx, val) {
-				v = jQuery.parseJSON(val);
-				console.log(v);
-				$('#table tbody').append('<tr>' +
-				'<td>' + v.id + '</td>' +
-				'<td>' + v.name + '</td>' +
-				'<td>' + v.user + '</td>' +
-				'<td>' + v.startStamp + '</td>' +
-				'<td>' + v.endStamp + '</td>' +
-				'<td>' + v.description + '</td>' +
-				'<td><button onclick="deleteTrack('+ v.id + ');" /></td>' +
-				'</tr>');
-			});
-		}
-	});
-	return false;
+function processForm() {
+	//Start of user code processForm
+	search();
 	//End of user code
 }
 
 function search() {
 	//Start of user code search
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/tyme/searchTrack",
+		data: {search: encodeURIComponent($('#search').val()) },
+		success: function (data) {
+			$('#table tbody tr').remove();
+			$.each(data, function (idx, val) {
+
+				v = val;
+				$('#table tbody').append('<tr id="row_'+ v.id +'">' +
+				'<td>' + v.id + '</td>' +
+				'<td>' + decodeURIComponent(v.user.name) + '</td>' +
+				'<td>' + decodeURIComponent(v.name) + '</td>' +
+				'<td>' + getDateValid( v.startStamp )+ '</td>' +
+				'<td>' + getDateValid(v.endStamp ) + '</td>' +
+				'<td>' + decodeURIComponent(v.description) + '</td>' +
+				'<td><button onclick="deleteTrack('+ v.id + ');">Loeschen</button></td>' +
+				'</tr>');
+			});
+		}
+	});
+	return false;
 	//End of user code
 }
 
@@ -133,26 +139,12 @@ function deleteTrack(id) {
 	//	TODO: Implement
 	$.ajax({
 		dataType: "json",
-		url: "http://localhost:8080/tyme/searchTrack",
-		data: {search: encodeURIComponent($('#search').val()) },
 		url: 'http://localhost:8080/tyme/deleteTrack/'+id,
 		type: "DELETE",
 		data: null,
 		success: function (data) {
-			$.each(data, function (idx, val) {
-				v = jQuery.parseJSON(val);
-				console.log(v);
-				$('#table tbody').append('<tr>' +
-				'<td>' + v.id + '</td>' +
-				'<td>' + v.name + '</td>' +
-				'<td>' + v.user + '</td>' +
-				'<td>' + v.startStamp + '</td>' +
-				'<td>' + v.endStamp + '</td>' +
-				'<td>' + v.description + '</td>' +
-				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
-				'</tr>');
-			});
-			$('#row_'+id).deleteRow();
+			console.log('sucessfully delted');
+			$('#row_'+id).remove();
 		}
 	});
 	return false;
@@ -160,7 +152,13 @@ function deleteTrack(id) {
 }
 
 //Start of user code js_code
-//	TODO: Implement
+function getDateValid(unixTimestamp) {
+	if ( unixTimestamp ) {
+		dateStart = new Date(unixTimestamp * 1000);
+		return dateStart.toLocaleString();
+	}
+	return "";
+}
 //End of user code
 
 </script>
