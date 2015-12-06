@@ -12,6 +12,14 @@ import [classifier.getCompleteName()/];
 [/for]
 [/template]
 
+[template public generateConstructor(aClass : Class, isPrivate : Boolean)]
+[if (isPrivate)]private [else]public [/if][aClass.name.toUpperFirst()/]() {
+	// [protected (aClass.name)]
+	// TODO Implement
+	// [/protected]
+}
+[/template]
+
 [template public generateOperation(o : Operation)]
 /**
  * [o.name/]
