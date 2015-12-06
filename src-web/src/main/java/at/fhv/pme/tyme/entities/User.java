@@ -1,6 +1,8 @@
+// Start of user code imports
 package at.fhv.pme.tyme.entities;
 
 
+// End of user code
 
 /**
  * User
@@ -17,6 +19,7 @@ public class User {
 	private int id;
 	
 	private String name;
+	
 	public int getId() {
 		return this.id;
 	}
