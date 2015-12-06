@@ -99,17 +99,6 @@ $(function() {
 
 function submit() {
 	//Start of user code submit
-$( document ).ready(function() {
-	$('form').on('submit',function(){
-		search();
-		return false;
-	});
-});
-//End of user code
-}
-
-function search() {
-	//Start of user code search
 	$.ajax({
 		dataType: "json",
 		url: "http://localhost:8080/tyme/searchTrack",
@@ -125,7 +114,7 @@ function search() {
 				'<td>' + v.startStamp + '</td>' +
 				'<td>' + v.endStamp + '</td>' +
 				'<td>' + v.description + '</td>' +
-				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
+				'<td><button onclick="deleteTrack('+ v.id + ');" /></td>' +
 				'</tr>');
 			});
 		}
@@ -134,10 +123,39 @@ function search() {
 	//End of user code
 }
 
-function deleteTrack() {
+function search() {
+	//Start of user code search
+	//End of user code
+}
+
+function deleteTrack(id) {
 	//Start of user code deleteTrack
 	//	TODO: Implement
-	console.log("deleteTrack");
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/tyme/searchTrack",
+		data: {search: encodeURIComponent($('#search').val()) },
+		url: 'http://localhost:8080/tyme/deleteTrack/'+id,
+		type: "DELETE",
+		data: null,
+		success: function (data) {
+			$.each(data, function (idx, val) {
+				v = jQuery.parseJSON(val);
+				console.log(v);
+				$('#table tbody').append('<tr>' +
+				'<td>' + v.id + '</td>' +
+				'<td>' + v.name + '</td>' +
+				'<td>' + v.user + '</td>' +
+				'<td>' + v.startStamp + '</td>' +
+				'<td>' + v.endStamp + '</td>' +
+				'<td>' + v.description + '</td>' +
+				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
+				'</tr>');
+			});
+			$('#row_'+id).deleteRow();
+		}
+	});
+	return false;
 	//End of user code
 }
 
