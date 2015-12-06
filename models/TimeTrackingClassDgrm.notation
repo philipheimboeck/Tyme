@@ -161,6 +161,14 @@
             <element xmi:type="uml:Operation" href="TimeTrackingClassDgrm.uml#__dDk8JOpEeW9JJzMjfAEKA"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="__dUDoZOpEeW9JJzMjfAEKA"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_sbp5cJwhEeWuT9ESM9tJ_Q" type="3013">
+            <element xmi:type="uml:Operation" href="TimeTrackingClassDgrm.uml#_sbXlkJwhEeWuT9ESM9tJ_Q"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_sbp5cZwhEeWuT9ESM9tJ_Q"/>
+          </children>
+          <children xmi:type="notation:Shape" xmi:id="_4iXzoJwhEeWuT9ESM9tJ_Q" type="3013">
+            <element xmi:type="uml:Operation" href="TimeTrackingClassDgrm.uml#_4iFfwJwhEeWuT9ESM9tJ_Q"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_4iXzoZwhEeWuT9ESM9tJ_Q"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_qfTOFZOoEeW9JJzMjfAEKA"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_qfTOFpOoEeW9JJzMjfAEKA"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_qfTOF5OoEeW9JJzMjfAEKA"/>
