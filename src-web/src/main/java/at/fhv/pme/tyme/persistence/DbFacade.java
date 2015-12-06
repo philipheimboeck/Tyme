@@ -85,8 +85,6 @@ public class DbFacade {
             st = connection.prepareStatement(query);
             st.setInt(1, timeTrack.getId());
             st.executeUpdate();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -177,8 +175,6 @@ public class DbFacade {
                 timetracks.add(timetrack);
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -235,8 +231,6 @@ public class DbFacade {
                 timetracks.add(timetrack);
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -281,8 +275,6 @@ public class DbFacade {
                 user.setName(resultSet.getString(2));
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -337,8 +329,6 @@ public class DbFacade {
                 user.setName(resultSet.getString(7));
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -380,8 +370,6 @@ public class DbFacade {
                 user.setId(rs.getInt(1));
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -424,8 +412,6 @@ public class DbFacade {
                 user.setName(resultSet.getString(2));
             }
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
