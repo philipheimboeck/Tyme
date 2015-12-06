@@ -52,7 +52,7 @@
 <div class="content">
 	[comment Form /]
 	<div id="forms">
-		<form method="" action="javascript:;" onsubmit="submit();" class="form-horizontal col-sm-6 col-centered">
+		<form method="" action="javascript:;" onsubmit="processForm();" class="form-horizontal col-sm-6 col-centered">
 		[for (p : Property | aClass.attribute) separator('\n')]
 		[if (p.hasStereotype('FormElement'))]
 		[if (p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label') <> null)]
@@ -93,8 +93,8 @@ $(function() {
 	//[/protected]
 });
 
-function submit() {
-	//[protected ('submit')]
+function processForm() {
+	//[protected ('processForm')]
 	//	TODO: Implement
 	console.log("OnSubmit");
 	//[/protected]
