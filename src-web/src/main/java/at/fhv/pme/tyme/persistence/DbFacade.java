@@ -4,7 +4,6 @@ package at.fhv.pme.tyme.persistence;
 import at.fhv.pme.tyme.entities.Timetrack;
 import at.fhv.pme.tyme.entities.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.sql.*;
 import java.util.HashSet;
 
@@ -372,7 +371,7 @@ public class DbFacade {
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
             String query = "INSERT INTO user (name) VALUES (?)";
 
-            st = connection.prepareStatement(query);
+            st = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, user.getName());
             st.executeUpdate();
 

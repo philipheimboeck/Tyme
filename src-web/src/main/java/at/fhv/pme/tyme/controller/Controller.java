@@ -30,7 +30,7 @@ public class Controller {
         try {
             Timetrack timetrack = DbFacade.getInstance().getTimetrack(trackId);
             if (timetrack == null) {
-                return new JSONObject().put("success", false).toString();
+                throw new Exception("Timetrack not found");
             }
             DbFacade.getInstance().deleteTimeTrack(timetrack);
             return new JSONObject().put("success", true).toString();
@@ -57,7 +57,7 @@ public class Controller {
                 DbFacade.getInstance().insertUser(userEntity);
             }
             if (userEntity.getId() <= 0) {
-                return new JSONObject().put("success", false).toString();
+                throw new Exception("User has no ID");
             }
 
             Timetrack timetrack = new Timetrack();
