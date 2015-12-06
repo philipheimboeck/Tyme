@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/_6aLkoJnCEeWuTPlhAergsA/9" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/_6aLkoJnCEeWuTPlhAergsA/9 ../src/at/fhv/pme/tyme/model.profile.uml#_6aMLsJnCEeWuTPlhAergsA">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/__dudAJvxEeWuT9ESM9tJ_Q/13" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/__dudAJvxEeWuT9ESM9tJ_Q/13 ../src/at/fhv/pme/tyme/model.profile.uml#__dvEEJvxEeWuT9ESM9tJ_Q">
   <uml:Model xmi:id="_riF4oIMREeWnYoTeH9KJag" name="model">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_3g9kAJOcEeWj7fGMGOFwiA">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -130,16 +130,22 @@
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_mF1Ok5mqEeWuTPlhAergsA" name="timetrack" type="_2iHQgIMREeWnYoTeH9KJag" association="_mF0ngJmqEeWuTPlhAergsA"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_LrYiIJvxEeWuT9ESM9tJ_Q" name="at.fhv.pme.tyme.ui">
+      <packagedElement xmi:type="uml:Class" xmi:id="_P00csJvxEeWuT9ESM9tJ_Q" name="Index"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_SwT9cJvxEeWuT9ESM9tJ_Q" name="SearchForm"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZYS-EJvxEeWuT9ESM9tJ_Q" name="SearchField"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_a2Qw4JvxEeWuT9ESM9tJ_Q" name="SearchButton"/>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ruq-YIkmEeW2lPo0wJq9VQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-GKHIJnCEeWuTPlhAergsA" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHIZnCEeWuTPlhAergsA" key="Version" value="0.0.10"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHIpnCEeWuTPlhAergsA" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHI5nCEeWuTPlhAergsA" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHJJnCEeWuTPlhAergsA" key="Date" value="2015-12-03"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-GKHJZnCEeWuTPlhAergsA" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AhUA8JvyEeWuT9ESM9tJ_Q" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA8ZvyEeWuT9ESM9tJ_Q" key="Version" value="0.0.14"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA8pvyEeWuT9ESM9tJ_Q" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA85vyEeWuT9ESM9tJ_Q" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA9JvyEeWuT9ESM9tJ_Q" key="Date" value="2015-12-06"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA9ZvyEeWuT9ESM9tJ_Q" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RurlcIkmEeW2lPo0wJq9VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#_6aMLsJnCEeWuTPlhAergsA"/>
+        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#__dvEEJvxEeWuT9ESM9tJ_Q"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../src/at/fhv/pme/tyme/model.profile.uml#_0TXMYIkkEeW2lPo0wJq9VQ"/>
     </profileApplication>
@@ -158,4 +164,8 @@
   <profile:FormParam xmi:id="_0wFAAJmrEeWuTPlhAergsA" name="end" base_Parameter="_qC8h4JOrEeW9JJzMjfAEKA"/>
   <profile:FormParam xmi:id="_2q_NgJmrEeWuTPlhAergsA" name="description" base_Parameter="_sFdzQJOrEeW9JJzMjfAEKA"/>
   <profile:QueryParam xmi:id="_qJUnQJmsEeWuTPlhAergsA" name="search" base_Parameter="_wH_NgJOrEeW9JJzMjfAEKA"/>
+  <profile:UserInterface xmi:id="_Rfq08JvxEeWuT9ESM9tJ_Q" base_Class="_P00csJvxEeWuT9ESM9tJ_Q" form="_WMJyMJvxEeWuT9ESM9tJ_Q" title="Timetrack"/>
+  <profile:Form xmi:id="_WMJyMJvxEeWuT9ESM9tJ_Q" method="" id="searchForm" onSubmit="" formelement="_wqf5QJvxEeWuT9ESM9tJ_Q _0YCiAJvxEeWuT9ESM9tJ_Q" base_Class="_SwT9cJvxEeWuT9ESM9tJ_Q"/>
+  <profile:FormElement xmi:id="_wqf5QJvxEeWuT9ESM9tJ_Q" name="search" id="search" label="Suchbegriff" base_Class="_ZYS-EJvxEeWuT9ESM9tJ_Q" type="text"/>
+  <profile:FormElement xmi:id="_0YCiAJvxEeWuT9ESM9tJ_Q" name="submit" id="submitButton" label="Suchen" base_Class="_a2Qw4JvxEeWuT9ESM9tJ_Q" type="submit"/>
 </xmi:XMI>

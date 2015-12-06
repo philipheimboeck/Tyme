@@ -1,11 +1,14 @@
 package at.fhv.pme.tyme.common.services;
 
 import java.io.File;
+import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import org.eclipse.emf.ecore.impl.EReferenceImpl;
+import org.eclipse.emf.ecore.util.EcoreEList;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Namespace;
@@ -96,5 +99,20 @@ public class UML2Services {
 		}
 		
 		return ((EnumerationLiteral) object).getName();
+	}
+	
+	public List<Element> getForms(Element c) {
+		List<Element> list = new ArrayList<>();
+		
+		Stereotype s = c.getAppliedStereotype("profile::UserInterface");
+		Object object = c.getValue(s, "form");
+		if(object != null) {
+			AbstractCollection<Element> ec = (AbstractCollection<Element>) object;
+			for (Element element : ec) {
+				list.add(element);
+			}
+		}
+		
+		return list;
 	}
 }

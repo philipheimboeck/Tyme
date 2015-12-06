@@ -11,6 +11,10 @@
 
 <html>
 <head><title>Fix defined page Title</title><head>
+
+<div id="forms">
+[for (e : Element | aClass.getForms())]
+[/for]
 <form method="" onsubmit="javascript:;">
 
 	[comment Attributes/]
@@ -20,6 +24,11 @@
 
 
 </form>
+</div>
+
+<script type="text/javascript">
+	
+</script>
 </html>
 
 [/file]

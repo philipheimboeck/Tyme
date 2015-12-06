@@ -31,3 +31,9 @@
 		'getHTTPMethodName(org.eclipse.uml2.uml.Operation)',
 		 Sequence{arg0})
 /]
+
+[query public getForms(arg0 : Element) : Sequence(Element)
+	= invoke('at.fhv.pme.tyme.common.services.UML2Services',
+		'getForms(org.eclipse.uml2.uml.Element)',
+		Sequence{arg0})
+/]
