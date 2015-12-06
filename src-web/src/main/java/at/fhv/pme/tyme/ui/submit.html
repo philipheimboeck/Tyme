@@ -3,7 +3,7 @@
 <head>
 <title>Erstelle Timetrack</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
 
@@ -11,23 +11,40 @@
 <h1>Erstelle Timetrack</h1>
 
 <div class="navigation">
-<nav>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Tyme</a>
+	    </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
 
 
 
 
 
 
-		<a href="submit.html">Neuer Track</a>
+				<li>
+				<a href="submit.html">Neuer Track</a>
+				</li>
 
-		<a href="search.html">Suche</a>
+				<li>
+				<a href="search.html">Suche</a>
+				</li>
 
-		<a href="index.html">Alle Tracks</a>
-
-	<!-- Start of user code navigation
-	 -->
-	<!-- Todo Add custom navigation-->
-	<!-- End of user code -->
+				<li>
+				<a href="index.html">Alle Tracks</a>
+				</li>
+		  </ul>
+		</div>
+	</div>
 </nav>
 
 </div>
@@ -73,9 +90,13 @@
 <script type="text/javascript">
 function submit() {
 	//Start of user code submit
-	//	TODO: Implement
-	console.log("OnSubmit");
-	//End of user code
+$( document ).ready(function() {
+	$('form').on('submit',function(){
+		insert();
+		return false;
+	});
+});
+//End of user code
 }
 
 function insert() {
@@ -100,13 +121,8 @@ function insert() {
 	//End of user code
 }
 
-//Start of user code submit
-$( document ).ready(function() {
-	$('form').on('submit',function(){
-		insert();
-		return false;
-	});
-});
+//Start of user code js_code
+//	TODO: Implement
 //End of user code
 
 </script>

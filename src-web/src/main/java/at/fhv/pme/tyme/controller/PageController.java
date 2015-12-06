@@ -15,15 +15,17 @@ import java.io.*;
 @Path("/")
 public class PageController {
 
+	
+	
 
-    /**
-     * get
-     */
-    @Path("{path:.*}")
-    @GET
-    @Produces("text/html")
-    public String get(@PathParam("path") String path) throws Exception {
-        // Start of user code get
+  		/**
+  		 * get
+  		*/
+  		@Path("{path:.*}")
+  		@GET
+  		@Produces("text/html")
+  		public String get(@PathParam("path") String path) throws Exception {
+  			// Start of user code get
         StringBuilder sb = new StringBuilder();
         try {
             if (path.isEmpty()) {
@@ -49,5 +51,5 @@ public class PageController {
         }
         return sb.toString();
         // End of user code
-    }
+  		}
 }

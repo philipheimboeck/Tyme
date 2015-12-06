@@ -3,7 +3,7 @@
 <head>
 <title>Timetracks</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
 
@@ -11,18 +11,35 @@
 <h1>Timetracks</h1>
 
 <div class="navigation">
-<nav>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Tyme</a>
+	    </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
 
-		<a href="submit.html">Neuer Track</a>
+				<li>
+				<a href="submit.html">Neuer Track</a>
+				</li>
 
-		<a href="search.html">Suche</a>
+				<li>
+				<a href="search.html">Suche</a>
+				</li>
 
-		<a href="index.html">Alle Tracks</a>
-
-	<!-- Start of user code navigation
-	 -->
-	<!-- Todo Add custom navigation-->
-	<!-- End of user code -->
+				<li>
+				<a href="index.html">Alle Tracks</a>
+				</li>
+		  </ul>
+		</div>
+	</div>
 </nav>
 
 </div>
@@ -36,7 +53,7 @@
 		</form>
 	</div>
 	
-	<table id="table">
+	<table id="table" class="table">
 		<thead>
 <th>ID</th>
 <th>User</th>
@@ -62,32 +79,7 @@ End of user code-->
 <script type="text/javascript">
 function submit() {
 	//Start of user code submit
-
-$( document ).ready(function() {
-	$.ajax({
-		dataType: "json",
-		url: "http://localhost:8080/tyme/getTracks",
-		data: null,
-		success: function(data) {
-			$.each(data,function(idx,val){
-				v = jQuery.parseJSON(val);
-				console.log(v);
-				$('#table tbody').append('<tr>' +
-				'<td>'+ v.id +'</td>' +
-				'<td>'+ v.name +'</td>' +
-				'<td>'+ v.user +'</td>' +
-				'<td>'+ v.startStamp +'</td>' +
-				'<td>'+ v.endStamp +'</td>' +
-				'<td>'+ v.description +'</td>' +
-				'<td><a href="http://localhost:8080/tyme/deleteTrack/'+ v.id +'">Delete</a></td>' +
-				'</tr>');
-
-			});
-			console.log(data);
-		}
-	});
-});
-
+//	TODO: Implement
 //End of user code
 }
 
@@ -105,7 +97,7 @@ function deleteTrack() {
 	//End of user code
 }
 
-//Start of user code submit
+//Start of user code js_code
 //	TODO: Implement
 //End of user code
 
