@@ -80,3 +80,11 @@ java.util.Collection<[type.toJavaType()/]>
 @CliOption(key = {"[p.getValue(p.getAppliedStereotype('profile::CliOption'), 'key')/]"}, mandatory = [p.getValue(p.getAppliedStereotype('profile::CliOption'), 'mandatory')/], help = "[p.getValue(p.getAppliedStereotype('profile::CliOption'), 'help')/]") [p.toJavaType()/] [p.name/]
 [/for]
 [/template]
+
+[template public generateJSParameters(operation:Operation)]
+[operation.getRealParameters()->filter(Parameter).genJSRawDeclare()->sep(', ')/]
+[/template]
+
+[template public genJSRawDeclare(parameter:Parameter)]
+[name.toLowerFirst()/]
+[/template]
