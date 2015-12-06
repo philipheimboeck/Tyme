@@ -17,20 +17,22 @@ import javax.ws.rs.*;
 @Path("tyme/")
 public class Controller {
 
+	
+	
 
-    /**
-     * deleteTimeTrack
-     * Hallo
-     */
-    @Path("deleteTrack/{track}")
-    @DELETE
-    @Produces("application/json")
-    public String deleteTimeTrack(@PathParam("track") int trackId) throws Exception {
-        // Start of user code deleteTimeTrack
+  		/**
+  		 * deleteTimeTrack
+  		 * Hallo
+  		*/
+  		@Path("deleteTrack/{track}")
+  		@DELETE
+  		@Produces("application/json")
+  		public String deleteTimeTrack(@PathParam("track") int trackId) throws Exception {
+  			// Start of user code deleteTimeTrack
         try {
             Timetrack timetrack = DbFacade.getInstance().getTimetrack(trackId);
             if (timetrack == null) {
-                return new JSONObject().put("success", false).toString();
+                throw new Exception("Timetrack not found");
             }
             DbFacade.getInstance().deleteTimeTrack(timetrack);
             return new JSONObject().put("success", true).toString();
@@ -39,16 +41,16 @@ public class Controller {
             return new JSONObject().put("success", false).put("error", e.getMessage()).toString();
         }
         // End of user code
-    }
+  		}
 
-    /**
-     * insertTimeTrack
-     */
-    @Path("addTrack")
-    @POST
-    @Produces("application/json")
-    public String insertTimeTrack(@FormParam("name") String name, @FormParam("user") String userName, @FormParam("start") long startStamp, @FormParam("end") long endStamp, @FormParam("description") String description) throws Exception {
-        // Start of user code insertTimeTrack
+  		/**
+  		 * insertTimeTrack
+  		*/
+  		@Path("addTrack")
+  		@POST
+  		@Produces("application/json")
+  		public String insertTimeTrack(@FormParam("name") String name, @FormParam("user") String userName, @FormParam("start") long startStamp, @FormParam("end") long endStamp, @FormParam("description") String description) throws Exception {
+  			// Start of user code insertTimeTrack
         try {
             User userEntity = DbFacade.getInstance().getUserByName(userName);
             if (userEntity == null) {
@@ -57,7 +59,7 @@ public class Controller {
                 DbFacade.getInstance().insertUser(userEntity);
             }
             if (userEntity.getId() <= 0) {
-                return new JSONObject().put("success", false).toString();
+                throw new Exception("User has no ID");
             }
 
             Timetrack timetrack = new Timetrack();
@@ -74,37 +76,37 @@ public class Controller {
 
         return new JSONObject().put("success", true).toString();
         // End of user code
-    }
+  		}
 
-    /**
-     * searchTimeTrack
-     */
-    @Path("searchTrack")
-    @GET
-    @Produces("application/json")
-    public String searchTimeTrack(@QueryParam("search") String searchString) throws Exception {
-        // Start of user code searchTimeTrack
+  		/**
+  		 * searchTimeTrack
+  		*/
+  		@Path("searchTrack")
+  		@GET
+  		@Produces("application/json")
+  		public String searchTimeTrack(@QueryParam("search") String searchString) throws Exception {
+  			// Start of user code searchTimeTrack
         try {
             return new JSONArray(DbFacade.getInstance().getTimeTracks(searchString)).toString();
         } catch (Exception e) {
             return new JSONObject().put("success", false).put("error", e.getMessage()).toString();
         }
         // End of user code
-    }
+  		}
 
-    /**
-     * getAllTracks
-     */
-    @Path("getTracks")
-    @GET
-    @Produces("application/json")
-    public String getAllTracks() throws Exception {
-        // Start of user code getAllTracks
+  		/**
+  		 * getAllTracks
+  		*/
+  		@Path("getTracks")
+  		@GET
+  		@Produces("application/json")
+  		public String getAllTracks() throws Exception {
+  			// Start of user code getAllTracks
         try {
             return new JSONArray(DbFacade.getInstance().getAllTimeTracks()).toString();
         } catch (Exception e) {
             return new JSONObject().put("success", false).put("error", e.getMessage()).toString();
         }
         // End of user code
-    }
+  		}
 }

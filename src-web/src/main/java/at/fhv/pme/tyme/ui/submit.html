@@ -3,7 +3,7 @@
 <head>
 <title>Erstelle Timetrack</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
 
@@ -11,48 +11,76 @@
 <h1>Erstelle Timetrack</h1>
 
 <div class="navigation">
-<nav>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Tyme</a>
+	    </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
 
 
 
 
 
 
-		<a href="submit.html">Neuer Track</a>
+				<li>
+				<a href="submit.html">Neuer Track</a>
+				</li>
 
-		<a href="search.html">Suche</a>
+				<li>
+				<a href="search.html">Suche</a>
+				</li>
 
-		<a href="index.html">Alle Tracks</a>
-
-	<!-- Start of user code navigation
-	 -->
-	<!-- Todo Add custom navigation-->
-	<!-- End of user code -->
+				<li>
+				<a href="index.html">Alle Tracks</a>
+				</li>
+		  </ul>
+		</div>
+	</div>
 </nav>
 
 </div>
 
 <div class="content">
-<div class="container">
 	<div id="forms">
-		<form method="" onsubmit="javascript:submit();">
-		<label for="name">Bezeichnung</label>
-		<input type="text" name="name" id="name"/>
+		<form method="" action="javascript:;" onsubmit="javascript:submit();">
+		<div class="form-group">
+			<label for="name">Bezeichnung</label>
+			<input class="form-control" type="text" name="name" id="name"/>
+		</div>
 <br/>
-		<label for="user">Benutzername</label>
-		<input type="text" name="user" id="user"/>
+		<div class="form-group">
+			<label for="user">Benutzername</label>
+			<input class="form-control" type="text" name="user" id="user"/>
+		</div>
 <br/>
-		<label for="start">Start</label>
-		<input type="datetime-local" name="start" id="start"/>
+		<div class="form-group">
+			<label for="start">Start</label>
+			<input class="form-control" type="datetime-local" name="start" id="start"/>
+		</div>
 <br/>
-		<label for="end">Ende</label>
-		<input type="datetime-local" name="end" id="end"/>
+		<div class="form-group">
+			<label for="end">Ende</label>
+			<input class="form-control" type="datetime-local" name="end" id="end"/>
+		</div>
 <br/>
-		<label for="description">Beschreibung</label>
-		<input type="text" name="description" id="description"/>
+		<div class="form-group">
+			<label for="description">Beschreibung</label>
+			<input class="form-control" type="text" name="description" id="description"/>
+		</div>
 <br/>
-		<label for="submit">Eintragen</label>
-		<input type="submit" name="submit" id="submit"/>
+		<div class="form-group">
+			<label for="submit">Eintragen</label>
+			<input class="form-control" type="submit" name="submit" id="submit"/>
+		</div>
 <br/>
 <br/>
 <br/>
@@ -68,14 +96,30 @@
 
 
 </div>
-</div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-function submit() {
+$(function() {
+	//Start of user code documentLoad
+	// TODO: Document Load
+	//End of user code
+});
 
+function submit() {
 	//Start of user code submit
+$( document ).ready(function() {
+	$('form').on('submit',function(){
+		insert();
+		return false;
+	});
+});
+//End of user code
+}
+
+function insert() {
+	//Start of user code insert
+	//	TODO: Implement
 	$.ajax({
 		dataType: "json",
 		url: "http://localhost:8080/tyme/addTrack",
@@ -93,16 +137,9 @@ function submit() {
 	});
 	return false;
 	//End of user code
-
 }
 
-function insert() {
-	//Start of user code insert
-	//	TODO: Implement
-	//End of user code
-}
-
-//Start of user code submit
+//Start of user code js_code
 //	TODO: Implement
 //End of user code
 

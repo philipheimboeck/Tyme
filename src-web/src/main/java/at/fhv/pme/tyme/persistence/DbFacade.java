@@ -4,7 +4,6 @@ package at.fhv.pme.tyme.persistence;
 import at.fhv.pme.tyme.entities.Timetrack;
 import at.fhv.pme.tyme.entities.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.sql.*;
 import java.util.HashSet;
 
@@ -15,67 +14,67 @@ import java.util.HashSet;
  */
 public class DbFacade {
 
-    static DbFacade _instance = null;
+	static DbFacade _instance = null;
 
-    public static DbFacade getInstance() {
-        if (_instance == null) {
-            _instance = new DbFacade();
-        }
-        return _instance;
-    }
+	public static DbFacade getInstance() {
+		if(_instance == null) {
+			_instance = new DbFacade();
+		}
+		return _instance;
+	}
 
-    private DbFacade() {
-        // Start of user code DbFacade
+	private DbFacade() {
+		// Start of user code DbFacade
         // TODO Implement
         // End of user code
-    }
+	}
 
-    public String dbhost = "localhost";
+	public String dbhost = "localhost";
+	
+	public String dbuser = "root";
+	
+	public String dbpass = "root";
+	
+	public String dbname = "tyme";
+	
+	public String getDbhost() {
+		return this.dbhost;
+	}
+	
+	public void setDbhost(String dbhost) {
+		this.dbhost = dbhost;
+	}
+	
+	public String getDbuser() {
+		return this.dbuser;
+	}
+	
+	public void setDbuser(String dbuser) {
+		this.dbuser = dbuser;
+	}
+	
+	public String getDbpass() {
+		return this.dbpass;
+	}
+	
+	public void setDbpass(String dbpass) {
+		this.dbpass = dbpass;
+	}
+	
+	public String getDbname() {
+		return this.dbname;
+	}
+	
+	public void setDbname(String dbname) {
+		this.dbname = dbname;
+	}
+	
 
-    public String dbuser = "root";
-
-    public String dbpass = "root";
-
-    public String dbname = "tyme";
-
-    public String getDbhost() {
-        return this.dbhost;
-    }
-
-    public void setDbhost(String dbhost) {
-        this.dbhost = dbhost;
-    }
-
-    public String getDbuser() {
-        return this.dbuser;
-    }
-
-    public void setDbuser(String dbuser) {
-        this.dbuser = dbuser;
-    }
-
-    public String getDbpass() {
-        return this.dbpass;
-    }
-
-    public void setDbpass(String dbpass) {
-        this.dbpass = dbpass;
-    }
-
-    public String getDbname() {
-        return this.dbname;
-    }
-
-    public void setDbname(String dbname) {
-        this.dbname = dbname;
-    }
-
-
-    /**
-     * deleteTimeTrack
-     */
-    public void deleteTimeTrack(Timetrack timeTrack) throws Exception {
-        // Start of user code deleteTimeTrack
+  		/**
+  		 * deleteTimeTrack
+  		*/
+  		public void deleteTimeTrack(Timetrack timeTrack) throws Exception {
+  			// Start of user code deleteTimeTrack
         Connection connection = null;
         PreparedStatement st = null;
         try {
@@ -105,13 +104,13 @@ public class DbFacade {
             }
         }
         // End of user code
-    }
+  		}
 
-    /**
-     * insertTimetrack
-     */
-    public void insertTimetrack(Timetrack timeTrack) throws Exception {
-        // Start of user code insertTimetrack
+  		/**
+  		 * insertTimetrack
+  		*/
+  		public void insertTimetrack(Timetrack timeTrack) throws Exception {
+  			// Start of user code insertTimetrack
         Connection connection = null;
         PreparedStatement st = null;
         try {
@@ -143,13 +142,13 @@ public class DbFacade {
             }
         }
         // End of user code
-    }
+  		}
 
-    /**
-     * getAllTimeTracks
-     */
-    public java.util.Set<Timetrack> getAllTimeTracks() throws Exception {
-        // Start of user code getAllTimeTracks
+  		/**
+  		 * getAllTimeTracks
+  		*/
+  		public java.util.Set<Timetrack> getAllTimeTracks() throws Exception {
+  			// Start of user code getAllTimeTracks
         java.util.Set<Timetrack> timetracks = new HashSet<>();
         Connection connection = null;
         PreparedStatement st = null;
@@ -199,13 +198,13 @@ public class DbFacade {
 
         return timetracks;
         // End of user code
-    }
+  		}
 
-    /**
-     * getTimeTracks
-     */
-    public java.util.Set<Timetrack> getTimeTracks(String search) throws Exception {
-        // Start of user code getTimeTracks
+  		/**
+  		 * getTimeTracks
+  		*/
+  		public java.util.Set<Timetrack> getTimeTracks(String search) throws Exception {
+  			// Start of user code getTimeTracks
         java.util.Set<Timetrack> timetracks = new HashSet<>();
         Connection connection = null;
         PreparedStatement st = null;
@@ -257,13 +256,13 @@ public class DbFacade {
 
         return timetracks;
         // End of user code
-    }
+  		}
 
-    /**
-     * getUser
-     */
-    public User getUser(int id) throws Exception {
-        // Start of user code getUser
+  		/**
+  		 * getUser
+  		*/
+  		public User getUser(int id) throws Exception {
+  			// Start of user code getUser
         User user = null;
         Connection connection = null;
         PreparedStatement st = null;
@@ -302,13 +301,13 @@ public class DbFacade {
         }
         return user;
         // End of user code
-    }
+  		}
 
-    /**
-     * getTimetrack
-     */
-    public Timetrack getTimetrack(int id) throws Exception {
-        // Start of user code getTimetrack
+  		/**
+  		 * getTimetrack
+  		*/
+  		public Timetrack getTimetrack(int id) throws Exception {
+  			// Start of user code getTimetrack
         Timetrack timetrack = null;
         Connection connection = null;
         PreparedStatement st = null;
@@ -358,13 +357,13 @@ public class DbFacade {
         }
         return timetrack;
         // End of user code
-    }
+  		}
 
-    /**
-     * insertUser
-     */
-    public void insertUser(User user) throws Exception {
-        // Start of user code insertUser
+  		/**
+  		 * insertUser
+  		*/
+  		public void insertUser(User user) throws Exception {
+  			// Start of user code insertUser
         Connection connection = null;
         PreparedStatement st = null;
         try {
@@ -372,7 +371,7 @@ public class DbFacade {
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
             String query = "INSERT INTO user (name) VALUES (?)";
 
-            st = connection.prepareStatement(query);
+            st = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, user.getName());
             st.executeUpdate();
 
@@ -400,13 +399,13 @@ public class DbFacade {
             }
         }
         // End of user code
-    }
+  		}
 
-    /**
-     * getUserByName
-     */
-    public User getUserByName(String name) throws Exception {
-        // Start of user code getUserByName
+  		/**
+  		 * getUserByName
+  		*/
+  		public User getUserByName(String name) throws Exception {
+  			// Start of user code getUserByName
         User user = null;
         Connection connection = null;
         PreparedStatement st = null;
@@ -445,5 +444,5 @@ public class DbFacade {
         }
         return user;
         // End of user code
-    }
+  		}
 }

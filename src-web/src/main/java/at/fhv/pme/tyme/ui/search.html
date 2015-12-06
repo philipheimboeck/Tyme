@@ -3,7 +3,7 @@
 <head>
 <title>Suche Timetrack</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
 
@@ -11,33 +11,53 @@
 <h1>Suche Timetrack</h1>
 
 <div class="navigation">
-<nav>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Tyme</a>
+	    </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
 
 
 
-		<a href="submit.html">Neuer Track</a>
+				<li>
+				<a href="submit.html">Neuer Track</a>
+				</li>
 
-		<a href="search.html">Suche</a>
+				<li>
+				<a href="search.html">Suche</a>
+				</li>
 
-		<a href="index.html">Alle Tracks</a>
-
-	<!-- Start of user code navigation
-	 -->
-	<!-- Todo Add custom navigation-->
-	<!-- End of user code -->
+				<li>
+				<a href="index.html">Alle Tracks</a>
+				</li>
+		  </ul>
+		</div>
+	</div>
 </nav>
 
 </div>
 
 <div class="content">
-<div class="container">
 	<div id="forms">
-		<form method="" onsubmit="javascript:submit();">
-		<label for="search">Suchbegriff</label>
-		<input type="text" name="search" id="search"/>
+		<form method="" action="javascript:;" onsubmit="javascript:submit();">
+		<div class="form-group">
+			<label for="search">Suchbegriff</label>
+			<input class="form-control" type="text" name="search" id="search"/>
+		</div>
 <br/>
-		<label for="submit">Suchen</label>
-		<input type="submit" name="submit" id="submit"/>
+		<div class="form-group">
+			<label for="submit">Suchen</label>
+			<input class="form-control" type="submit" name="submit" id="submit"/>
+		</div>
 <br/>
 <br/>
 <br/>
@@ -47,7 +67,7 @@
 	
 
 
-	<table id="table">
+	<table id="table" class="table">
 		<thead>
 <th>ID</th>
 <th>User</th>
@@ -67,14 +87,29 @@ End of user code-->
 
 
 </div>
-</div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-function submit() {
+$(function() {
+	//Start of user code documentLoad
+	// TODO: Document Load
+	//End of user code
+});
 
+function submit() {
 	//Start of user code submit
+$( document ).ready(function() {
+	$('form').on('submit',function(){
+		search();
+		return false;
+	});
+});
+//End of user code
+}
+
+function search() {
+	//Start of user code search
 	$.ajax({
 		dataType: "json",
 		url: "http://localhost:8080/tyme/searchTrack",
@@ -83,46 +118,30 @@ function submit() {
 			$.each(data, function (idx, val) {
 				v = jQuery.parseJSON(val);
 				console.log(v);
-				$('#table tbody').append('<tr id="row_'+ v.id +'">' +
+				$('#table tbody').append('<tr>' +
 				'<td>' + v.id + '</td>' +
 				'<td>' + v.name + '</td>' +
 				'<td>' + v.user + '</td>' +
 				'<td>' + v.startStamp + '</td>' +
 				'<td>' + v.endStamp + '</td>' +
 				'<td>' + v.description + '</td>' +
-				'<td><button onclick="deleteTrack('+ v.id + ');" /></td>' +
+				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
 				'</tr>');
 			});
 		}
 	});
 	return false;
 	//End of user code
-
 }
 
-function search() {
-	//Start of user code search
-	//End of user code
-}
-
-function deleteTrack(id) {
+function deleteTrack() {
 	//Start of user code deleteTrack
 	//	TODO: Implement
-	$.ajax({
-		dataType: "json",
-		url: 'http://localhost:8080/tyme/deleteTrack/'+id,
-		type: "DELETE",
-		data: null,
-		success: function (data) {
-			$('#row_'+id).deleteRow();
-		}
-	});
-	return false;
-
+	console.log("deleteTrack");
 	//End of user code
 }
 
-//Start of user code submit
+//Start of user code js_code
 //	TODO: Implement
 //End of user code
 
