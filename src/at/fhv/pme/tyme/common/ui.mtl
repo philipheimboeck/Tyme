@@ -8,10 +8,16 @@
 
 [template public htmlForm(aClass : Class)]
 [file (aClass.namespace.toPath().concat(aClass.name.toLowerFirst()).concat('.html'), false, 'UTF-8')]
-
+<!DOCTYPE html>
 <html>
-<head><title>[aClass.getValue(aClass.getAppliedStereotype('profile::UserInterface'), 'title')/]</title></head>
+<head>
+<title>[aClass.getValue(aClass.getAppliedStereotype('profile::UserInterface'), 'title')/]</title>
+<link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
 <body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <h1>[aClass.getValue(aClass.getAppliedStereotype('profile::UserInterface'), 'title')/]</h1>
 
