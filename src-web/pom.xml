@@ -27,7 +27,7 @@
                     <webXml>WebContent\WEB-INF\web.xml</webXml>
                     <webResources>
                         <resource>
-                            <directory>src/main/java/at/fhv/pme/tyme</directory>
+                            <directory>src/main/java/at/fhv/pme/tyme/ui</directory>
                             <targetPath>WEB-INF/classes/</targetPath>
                         </resource>
                     </webResources>
