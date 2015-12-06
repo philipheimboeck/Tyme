@@ -7,28 +7,80 @@
 
 
 [template public htmlForm(aClass : Class)]
-[file (aClass.namespace.toPath().concat(aClass.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+[file (aClass.namespace.toPath().concat(aClass.name.toLowerFirst()).concat('.html'), false, 'UTF-8')]
 
 <html>
-<head><title>Fix defined page Title</title><head>
+<head><title>[aClass.getValue(aClass.getAppliedStereotype('profile::UserInterface'), 'title')/]</title></head>
+<body>
 
-<div id="forms">
-[for (e : Element | aClass.getForms())]
-[/for]
-<form method="" onsubmit="javascript:;">
+<h1>[aClass.getValue(aClass.getAppliedStereotype('profile::UserInterface'), 'title')/]</h1>
 
-	[comment Attributes/]
+<div class="navigation">
+<nav>
+[comment Other Elements /]
 	[for (p : Property | aClass.attribute) separator('\n')]
-		[p.visibility/] [if p.isStatic]static [/if][p.type.toJavaType()/] [p.name/];
+	[if (p.hasStereotype('Navigation'))]
+		<a href="[p.getValue(p.getAppliedStereotype('profile::Navigation'), 'url')/]">[p.name/]</a>
+	[/if]
 	[/for]
 
+	<!--[protected ('navigation')]
+	Add custom navigation
+	[/protected]-->
+</nav>
 
-</form>
+</div>
+
+<div class="content">
+	[comment Form /]
+	<div id="forms">
+		<form method="" onsubmit="javascript:submit();">
+		[for (p : Property | aClass.attribute) separator('<br/>\n')]
+		[if (p.hasStereotype('FormElement'))]
+		[if (p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label') <> null)]
+		<label for="[p.name/]">[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label')/]</label>
+		[/if]
+		<input type="[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'type')/]" name="[p.name/]" id="[p.name/]"/>
+		[/if]
+		[/for]
+		</form>
+	</div>
+	
+	[comment Other Elements /]
+	[for (p : Property | aClass.attribute) separator('\n')]
+	[if (p.hasStereotype('Table'))]
+	<table id="[p.name/]">
+		[comment Custom table header /]
+		[p.getValue(p.getAppliedStereotype('profile::Table'), 'header')/]
+		<tbody>
+		<!--[protected (p.name)]
+		Implement Custom Rows
+		[/protected]-->
+		</tbody>
+	</table>
+	[/if]
+	[/for]
 </div>
 
 <script type="text/javascript">
-	
+function submit() {
+	//[protected ('submit')]
+	//	TODO: Implement
+	console.log("OnSubmit");
+	//[/protected]
+}
+
+[for (o : Operation | aClass.ownedOperation) separator('\n')]
+function [o.name/]() {
+	//[protected (o.name)]
+	//	TODO: Implement
+	console.log("[o.name/]");
+	//[/protected]
+}
+[/for]
+
 </script>
+</body>
 </html>
 
 [/file]

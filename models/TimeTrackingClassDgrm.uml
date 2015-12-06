@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/__dudAJvxEeWuT9ESM9tJ_Q/13" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/__dudAJvxEeWuT9ESM9tJ_Q/13 ../src/at/fhv/pme/tyme/model.profile.uml#__dvEEJvxEeWuT9ESM9tJ_Q">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/_lG63oJwNEeWuT9ESM9tJ_Q/18" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/_lG63oJwNEeWuT9ESM9tJ_Q/18 ../src/at/fhv/pme/tyme/model.profile.uml#_lG8FwJwNEeWuT9ESM9tJ_Q">
   <uml:Model xmi:id="_riF4oIMREeWnYoTeH9KJag" name="model">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_3g9kAJOcEeWj7fGMGOFwiA">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -124,28 +124,53 @@
         </ownedOperation>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_mF0ngJmqEeWuTPlhAergsA" memberEnd="_mF1OkpmqEeWuTPlhAergsA _mF1Ok5mqEeWuTPlhAergsA">
+    <packagedElement xmi:type="uml:Association" xmi:id="_mF0ngJmqEeWuTPlhAergsA" memberEnd="_mF1OkpmqEeWuTPlhAergsA _mF1Ok5mqEeWuTPlhAergsA" navigableOwnedEnd="_mF1Ok5mqEeWuTPlhAergsA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mF1OkJmqEeWuTPlhAergsA" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mF1OkZmqEeWuTPlhAergsA" key="nature" value="UML_Nature"/>
       </eAnnotations>
       <ownedEnd xmi:type="uml:Property" xmi:id="_mF1Ok5mqEeWuTPlhAergsA" name="timetrack" type="_2iHQgIMREeWnYoTeH9KJag" association="_mF0ngJmqEeWuTPlhAergsA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_LrYiIJvxEeWuT9ESM9tJ_Q" name="at.fhv.pme.tyme.ui">
-      <packagedElement xmi:type="uml:Class" xmi:id="_P00csJvxEeWuT9ESM9tJ_Q" name="Index"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_SwT9cJvxEeWuT9ESM9tJ_Q" name="SearchForm"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_ZYS-EJvxEeWuT9ESM9tJ_Q" name="SearchField"/>
-      <packagedElement xmi:type="uml:Class" xmi:id="_a2Qw4JvxEeWuT9ESM9tJ_Q" name="SearchButton"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_P00csJvxEeWuT9ESM9tJ_Q" name="Search">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FAfZoJwAEeWuT9ESM9tJ_Q" name="search"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FWrsEJwAEeWuT9ESM9tJ_Q" name="submit"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_G9LL8JwEEeWuT9ESM9tJ_Q" name="table"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_x3XhwJwBEeWuT9ESM9tJ_Q" name="search"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mAk1wJwIEeWuT9ESM9tJ_Q" name="delete">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_xUrAMJwIEeWuT9ESM9tJ_Q" name="id" effect="delete">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_o4ZCUJwGEeWuT9ESM9tJ_Q" name="Submit">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_R_lzsJwIEeWuT9ESM9tJ_Q" name="name"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Spaz0JwIEeWuT9ESM9tJ_Q" name="user"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_S8lAYJwIEeWuT9ESM9tJ_Q" name="start"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TaiHsJwIEeWuT9ESM9tJ_Q" name="end"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ULtF8JwIEeWuT9ESM9tJ_Q" name="description"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_VmK40JwIEeWuT9ESM9tJ_Q" name="submit"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_W4hRgJwIEeWuT9ESM9tJ_Q" name="insert"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_LsL78JwIEeWuT9ESM9tJ_Q" name="Index">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_a7jpIJwIEeWuT9ESM9tJ_Q" name="table"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_elxREJwIEeWuT9ESM9tJ_Q" name="getAll"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_kxrZsJwIEeWuT9ESM9tJ_Q" name="delete">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_tbERYJwIEeWuT9ESM9tJ_Q" name="id" effect="delete">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ruq-YIkmEeW2lPo0wJq9VQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_AhUA8JvyEeWuT9ESM9tJ_Q" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA8ZvyEeWuT9ESM9tJ_Q" key="Version" value="0.0.14"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA8pvyEeWuT9ESM9tJ_Q" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA85vyEeWuT9ESM9tJ_Q" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA9JvyEeWuT9ESM9tJ_Q" key="Date" value="2015-12-06"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_AhUA9ZvyEeWuT9ESM9tJ_Q" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mNFOcJwNEeWuT9ESM9tJ_Q" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mNFOcZwNEeWuT9ESM9tJ_Q" key="Version" value="0.0.19"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mNFOcpwNEeWuT9ESM9tJ_Q" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mNFOc5wNEeWuT9ESM9tJ_Q" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mNFOdJwNEeWuT9ESM9tJ_Q" key="Date" value="2015-12-06"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mNFOdZwNEeWuT9ESM9tJ_Q" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RurlcIkmEeW2lPo0wJq9VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#__dvEEJvxEeWuT9ESM9tJ_Q"/>
+        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#_lG8FwJwNEeWuT9ESM9tJ_Q"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../src/at/fhv/pme/tyme/model.profile.uml#_0TXMYIkkEeW2lPo0wJq9VQ"/>
     </profileApplication>
@@ -164,8 +189,17 @@
   <profile:FormParam xmi:id="_0wFAAJmrEeWuTPlhAergsA" name="end" base_Parameter="_qC8h4JOrEeW9JJzMjfAEKA"/>
   <profile:FormParam xmi:id="_2q_NgJmrEeWuTPlhAergsA" name="description" base_Parameter="_sFdzQJOrEeW9JJzMjfAEKA"/>
   <profile:QueryParam xmi:id="_qJUnQJmsEeWuTPlhAergsA" name="search" base_Parameter="_wH_NgJOrEeW9JJzMjfAEKA"/>
-  <profile:UserInterface xmi:id="_Rfq08JvxEeWuT9ESM9tJ_Q" base_Class="_P00csJvxEeWuT9ESM9tJ_Q" form="_WMJyMJvxEeWuT9ESM9tJ_Q" title="Timetrack"/>
-  <profile:Form xmi:id="_WMJyMJvxEeWuT9ESM9tJ_Q" method="" id="searchForm" onSubmit="" formelement="_wqf5QJvxEeWuT9ESM9tJ_Q _0YCiAJvxEeWuT9ESM9tJ_Q" base_Class="_SwT9cJvxEeWuT9ESM9tJ_Q"/>
-  <profile:FormElement xmi:id="_wqf5QJvxEeWuT9ESM9tJ_Q" name="search" id="search" label="Suchbegriff" base_Class="_ZYS-EJvxEeWuT9ESM9tJ_Q" type="text"/>
-  <profile:FormElement xmi:id="_0YCiAJvxEeWuT9ESM9tJ_Q" name="submit" id="submitButton" label="Suchen" base_Class="_a2Qw4JvxEeWuT9ESM9tJ_Q" type="submit"/>
+  <profile:UserInterface xmi:id="_Rfq08JvxEeWuT9ESM9tJ_Q" base_Class="_P00csJvxEeWuT9ESM9tJ_Q" title="Suche Timetrack"/>
+  <profile:FormElement xmi:id="_G8xgIJwAEeWuT9ESM9tJ_Q" base_Property="_FWrsEJwAEeWuT9ESM9tJ_Q" type="submit" label="Suchen"/>
+  <profile:FormElement xmi:id="_Hz25IJwAEeWuT9ESM9tJ_Q" base_Property="_FAfZoJwAEeWuT9ESM9tJ_Q" type="text" label="Suchbegriff"/>
+  <profile:Table xmi:id="_IbQTgJwEEeWuT9ESM9tJ_Q" header="&lt;thead>&#xA;&lt;th>ID&lt;/th>&#xA;&lt;th>User&lt;/th>&#xA;&lt;th>Name&lt;/th>&#xA;&lt;th>Start&lt;/th>&#xA;&lt;th>Ende&lt;/th>&#xA;&lt;th>Beschreibung&lt;/th>&#xA;&lt;th>Aktion&lt;/th>&#xA;&lt;/thead>" base_Property="_G9LL8JwEEeWuT9ESM9tJ_Q"/>
+  <profile:UserInterface xmi:id="_Cct7sJwIEeWuT9ESM9tJ_Q" base_Class="_o4ZCUJwGEeWuT9ESM9tJ_Q" title="Erstelle Timetrack"/>
+  <profile:UserInterface xmi:id="_ONjFcJwIEeWuT9ESM9tJ_Q" base_Class="_LsL78JwIEeWuT9ESM9tJ_Q" title="Timetracks"/>
+  <profile:Table xmi:id="_2j_kwJwIEeWuT9ESM9tJ_Q" header="&lt;thead>&#xA;&lt;th>ID&lt;/th>&#xA;&lt;th>User&lt;/th>&#xA;&lt;th>Name&lt;/th>&#xA;&lt;th>Start&lt;/th>&#xA;&lt;th>Ende&lt;/th>&#xA;&lt;th>Beschreibung&lt;/th>&#xA;&lt;th>Aktion&lt;/th>&#xA;&lt;/thead>" base_Property="_a7jpIJwIEeWuT9ESM9tJ_Q"/>
+  <profile:FormElement xmi:id="_9mFHcJwIEeWuT9ESM9tJ_Q" base_Property="_R_lzsJwIEeWuT9ESM9tJ_Q" type="text" label="Bezeichnung"/>
+  <profile:FormElement xmi:id="_Aa9C0JwJEeWuT9ESM9tJ_Q" base_Property="_Spaz0JwIEeWuT9ESM9tJ_Q" type="text" label="Benutzername"/>
+  <profile:FormElement xmi:id="_PViy0JwJEeWuT9ESM9tJ_Q" base_Property="_S8lAYJwIEeWuT9ESM9tJ_Q" type="datetime-local" label="Start"/>
+  <profile:FormElement xmi:id="_RHHeIJwJEeWuT9ESM9tJ_Q" base_Property="_TaiHsJwIEeWuT9ESM9tJ_Q" type="datetime-local" label="Ende"/>
+  <profile:FormElement xmi:id="_TbFr4JwJEeWuT9ESM9tJ_Q" base_Property="_ULtF8JwIEeWuT9ESM9tJ_Q" type="text" label="Beschreibung"/>
+  <profile:FormElement xmi:id="_U39SgJwJEeWuT9ESM9tJ_Q" base_Property="_VmK40JwIEeWuT9ESM9tJ_Q" type="submit" label="Eintragen"/>
 </xmi:XMI>

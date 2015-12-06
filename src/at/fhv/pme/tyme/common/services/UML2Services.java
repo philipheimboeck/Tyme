@@ -100,19 +100,4 @@ public class UML2Services {
 		
 		return ((EnumerationLiteral) object).getName();
 	}
-	
-	public List<Element> getForms(Element c) {
-		List<Element> list = new ArrayList<>();
-		
-		Stereotype s = c.getAppliedStereotype("profile::UserInterface");
-		Object object = c.getValue(s, "form");
-		if(object != null) {
-			AbstractCollection<Element> ec = (AbstractCollection<Element>) object;
-			for (Element element : ec) {
-				list.add(element);
-			}
-		}
-		
-		return list;
-	}
 }
