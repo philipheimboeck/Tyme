@@ -1,7 +1,12 @@
-
+<!DOCTYPE html>
 <html>
-<head><title>Timetracks</title></head>
+<head>
+<title>Timetracks</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
 <body>
+
 
 <h1>Timetracks</h1>
 
@@ -52,6 +57,8 @@ End of user code-->
 
 </div>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 function submit() {
 	//Start of user code submit
@@ -67,14 +74,44 @@ function getAll() {
 	//End of user code
 }
 
-function delete() {
+function delete2() {
 	//Start of user code delete
 	//	TODO: Implement
 	console.log("delete");
 	//End of user code
 }
 
+//Start of user code submit
+
+$( document ).ready(function() {
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/tyme/getTracks",
+		data: null,
+		success: function(data) {
+			$.each(data,function(idx,val){
+				v = jQuery.parseJSON(val);
+				console.log(v);
+				$('#table tbody').append('<tr>' +
+				'<td>'+ v.id +'</td>' +
+				'<td>'+ v.name +'</td>' +
+				'<td>'+ v.user +'</td>' +
+				'<td>'+ v.startStamp +'</td>' +
+				'<td>'+ v.endStamp +'</td>' +
+				'<td>'+ v.description +'</td>' +
+				'<td><a href="http://localhost:8080/tyme/deleteTrack/'+ v.id +'">Delete</a></td>' +
+				'</tr>');
+
+			});
+			console.log(data);
+		}
+	});
+});
+
+//End of user code
+
 </script>
+
 </body>
 </html>
 
