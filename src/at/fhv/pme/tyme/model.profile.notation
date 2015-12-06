@@ -303,6 +303,10 @@
         <element xmi:type="uml:Property" href="model.profile.uml#_Us0KwJwPEeWuT9ESM9tJ_Q"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Us_w8ZwPEeWuT9ESM9tJ_Q"/>
       </children>
+      <children xmi:type="notation:Shape" xmi:id="_LJMqAJwQEeWuT9ESM9tJ_Q" type="3002">
+        <element xmi:type="uml:Property" href="model.profile.uml#_LJAcwJwQEeWuT9ESM9tJ_Q"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_LJMqAZwQEeWuT9ESM9tJ_Q"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_QyKTFJwPEeWuT9ESM9tJ_Q"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_QyKTFZwPEeWuT9ESM9tJ_Q"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_QyKTFpwPEeWuT9ESM9tJ_Q"/>

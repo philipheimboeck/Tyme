@@ -20,7 +20,7 @@
 [comment Other Elements /]
 	[for (p : Property | aClass.attribute) separator('\n')]
 	[if (p.hasStereotype('Navigation'))]
-		<a href="[p.getValue(p.getAppliedStereotype('profile::Navigation'), 'url')/]">[p.name/]</a>
+		<a href="[p.getValue(p.getAppliedStereotype('profile::Navigation'), 'url')/]">[p.getValue(p.getAppliedStereotype('profile::Navigation'), 'label')/]</a>
 	[/if]
 	[/for]
 
