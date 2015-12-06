@@ -2,12 +2,11 @@
 <html>
 <head>
 <title>Suche Timetrack</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <h1>Suche Timetrack</h1>
 
@@ -32,7 +31,7 @@
 
 <div class="content">
 	<div id="forms">
-		<form method="" onsubmit="javascript:submit();">
+		<form method="" onsubmit="return search();">
 		<label for="search">Suchbegriff</label>
 		<input type="text" name="search" id="search"/>
 <br/>
@@ -68,18 +67,64 @@ End of user code-->
 
 </div>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
+
 function submit() {
+
 	//Start of user code submit
-	//	TODO: Implement
+	alert("onsubmit");
 	console.log("OnSubmit");
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/tyme/search/" + encodeURIComponent($('#search').val()),
+		data: null,
+		success: function (data) {
+			$.each(data, function (idx, val) {
+				v = jQuery.parseJSON(val);
+				console.log(v);
+				$('#table tbody').append('<tr>' +
+				'<td>' + v.id + '</td>' +
+				'<td>' + v.name + '</td>' +
+				'<td>' + v.user + '</td>' +
+				'<td>' + v.startStamp + '</td>' +
+				'<td>' + v.endStamp + '</td>' +
+				'<td>' + v.description + '</td>' +
+				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
+				'</tr>');
+			});
+		}
+	});
+	return false;
 	//End of user code
+
 }
+
 
 function search() {
 	//Start of user code search
-	//	TODO: Implement
-	console.log("search");
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/tyme/searchTrack",
+		data: {search: encodeURIComponent($('#search').val()) },
+		success: function (data) {
+			$.each(data, function (idx, val) {
+				v = jQuery.parseJSON(val);
+				console.log(v);
+				$('#table tbody').append('<tr>' +
+				'<td>' + v.id + '</td>' +
+				'<td>' + v.name + '</td>' +
+				'<td>' + v.user + '</td>' +
+				'<td>' + v.startStamp + '</td>' +
+				'<td>' + v.endStamp + '</td>' +
+				'<td>' + v.description + '</td>' +
+				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
+				'</tr>');
+			});
+		}
+	});
+	return false;
 	//End of user code
 }
 
@@ -90,7 +135,17 @@ function deleteTrack() {
 	//End of user code
 }
 
+//Start of user code submit
+$( document ).ready(function() {
+	$('form').on('submit',function(){
+		search();
+		return false;
+	});
+});
+//End of user code
+
 </script>
+
 </body>
 </html>
 
