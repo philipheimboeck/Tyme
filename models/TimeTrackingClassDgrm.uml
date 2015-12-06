@@ -52,11 +52,11 @@
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_78CKsJOoEeW9JJzMjfAEKA" name="dbuser">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_U-hXEJwVEeWuT9ESM9tJ_Q" name="dbuser" value="root"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_U-hXEJwVEeWuT9ESM9tJ_Q" name="dbuser" value="s4"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_8i6kgJOoEeW9JJzMjfAEKA" name="dbpass">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_Rm8-UJwVEeWuT9ESM9tJ_Q" name="dbpass" value="root"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_Rm8-UJwVEeWuT9ESM9tJ_Q" name="dbpass" value="s4"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_AvpDoJOpEeW9JJzMjfAEKA" name="dbname">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
