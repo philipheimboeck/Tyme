@@ -127,16 +127,8 @@ function processForm() {
 function insert() {
 	//Start of user code insert
 
-	date = new Date( $('#start').val() );
-	if ( date == NaN )  {
-		alert('invalid input for datetime');
-		return;
-	}
-	dateEnd = new Date( $('#end').val() );
-	if ( dateEnd == NaN )  {
-		alert('invalid input for datetime');
-		return;
-	}
+	date = getDate($('#start'));
+	dateEnd = getDate($('#end'));
 
 	$.ajax({
 		dataType: "json",
@@ -145,8 +137,8 @@ function insert() {
 		data: {
 			name: encodeURIComponent($('#name').val()),
 			user: encodeURIComponent($('#user').val()),
-			start: encodeURIComponent( date.getTime()/1000 ),
-			end: encodeURIComponent( dateEnd.getTime()/1000 ),
+			start: date != null ? date.getTime()/1000 : '' ,
+			end: dateEnd != null ? dateEnd.getTime()/1000 : '' ,
 			description: encodeURIComponent($('#description').val())
 		},
 		success: function (data) {
@@ -160,7 +152,14 @@ function insert() {
 }
 
 //Start of user code js_code
-
+function getDate(dateElem) {
+	v = parseInt($(dateElem).val(), 10);
+	if ( v > 0 ) {
+		return new Date(v*1000);
+	}
+	alert('invalid input for datetime');
+	return null;
+}
 //End of user code
 
 </script>
