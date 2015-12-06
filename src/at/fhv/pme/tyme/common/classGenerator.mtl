@@ -30,8 +30,9 @@ import [classifier.getCompleteName()/];
 [if (o.hasStereotype('RestMethod'))]
 @Path("[o.getValue(o.getAppliedStereotype('profile::RestMethod'), 'path')/]")
 @[o.getHTTPMethodName()/]
+@Produces("[o.getValue(o.getAppliedStereotype('profile::RestMethod'), 'produces')/]")
 [/if]
-[o.visibility/] [if o.isStatic]static [/if][o.generateReturn()/] [o.name/]([o.generateRawParameters()/]) {
+[o.visibility/] [if o.isStatic]static [/if][o.generateReturn()/] [o.name/]([o.generateRawParameters()/]) throws Exception {
 	// [protected (o.name)]
 	// TODO Implement
 	// [/protected]

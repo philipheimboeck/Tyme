@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/_mX_kUJwVEeWuT9ESM9tJ_Q/21" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/_mX_kUJwVEeWuT9ESM9tJ_Q/21 ../src/at/fhv/pme/tyme/model.profile.uml#_mYBZgJwVEeWuT9ESM9tJ_Q">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:profile="http:///schemas/profile/_OMOesJwnEeWuT9ESM9tJ_Q/22" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/profile/_OMOesJwnEeWuT9ESM9tJ_Q/22 ../src/at/fhv/pme/tyme/model.profile.uml#_OMPFwJwnEeWuT9ESM9tJ_Q">
   <uml:Model xmi:id="_riF4oIMREeWnYoTeH9KJag" name="model">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_3g9kAJOcEeWj7fGMGOFwiA">
       <importedPackage xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
@@ -95,6 +95,15 @@
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="__axO0JwhEeWuT9ESM9tJ_Q" type="_2iHQgIMREeWnYoTeH9KJag" direction="return"/>
         </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_wQuskJwsEeWuT9ESM9tJ_Q" name="insertUser">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_8uqM4JwsEeWuT9ESM9tJ_Q" name="user" type="_kUcJcJmqEeWuTPlhAergsA"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_xw4QsJwsEeWuT9ESM9tJ_Q" name="getUserByName">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_4aZiYJwsEeWuT9ESM9tJ_Q" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_6rVqQJwsEeWuT9ESM9tJ_Q" type="_kUcJcJmqEeWuTPlhAergsA" direction="return"/>
+        </ownedOperation>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_z0kCYJOqEeW9JJzMjfAEKA" name="at.fhv.pme.tyme.controller">
@@ -112,8 +121,11 @@
           </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_IqSUEJOrEeW9JJzMjfAEKA" name="insertTimeTrack">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jz93IJOrEeW9JJzMjfAEKA" name="user">
-            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9UdFwJwlEeWuT9ESM9tJ_Q" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jz93IJOrEeW9JJzMjfAEKA" name="userName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_meFUAJOrEeW9JJzMjfAEKA" name="startStamp">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
@@ -200,15 +212,15 @@
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Ruq-YIkmEeW2lPo0wJq9VQ">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rpIt0JwVEeWuT9ESM9tJ_Q" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rpIt0ZwVEeWuT9ESM9tJ_Q" key="Version" value="0.0.22"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rpIt0pwVEeWuT9ESM9tJ_Q" key="Comment" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rpIt05wVEeWuT9ESM9tJ_Q" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rpIt1JwVEeWuT9ESM9tJ_Q" key="Date" value="2015-12-06"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rpIt1ZwVEeWuT9ESM9tJ_Q" key="Author" value=""/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ps6OUJwnEeWuT9ESM9tJ_Q" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ps6OUZwnEeWuT9ESM9tJ_Q" key="Version" value="0.0.23"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ps6OUpwnEeWuT9ESM9tJ_Q" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ps6OU5wnEeWuT9ESM9tJ_Q" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ps6OVJwnEeWuT9ESM9tJ_Q" key="Date" value="2015-12-06"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ps6OVZwnEeWuT9ESM9tJ_Q" key="Author" value=""/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RurlcIkmEeW2lPo0wJq9VQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#_mYBZgJwVEeWuT9ESM9tJ_Q"/>
+        <references xmi:type="ecore:EPackage" href="../src/at/fhv/pme/tyme/model.profile.uml#_OMPFwJwnEeWuT9ESM9tJ_Q"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../src/at/fhv/pme/tyme/model.profile.uml#_0TXMYIkkEeW2lPo0wJq9VQ"/>
     </profileApplication>
@@ -252,5 +264,6 @@
   <profile:Singleton xmi:id="_s5AaQJwVEeWuT9ESM9tJ_Q" base_Class="_qe6zkJOoEeW9JJzMjfAEKA"/>
   <profile:Controller xmi:id="_jwP-oJwYEeWuT9ESM9tJ_Q" base_Class="_fg0w0JwYEeWuT9ESM9tJ_Q" path="/"/>
   <profile:PathParam xmi:id="_1BPlUJwYEeWuT9ESM9tJ_Q" name="path" base_Parameter="_zf6VcJwYEeWuT9ESM9tJ_Q"/>
-  <profile:RestMethod xmi:id="_MmKBIJwZEeWuT9ESM9tJ_Q" base_Operation="_rJakkJwYEeWuT9ESM9tJ_Q" path="{path:.*}"/>
+  <profile:RestMethod xmi:id="_MmKBIJwZEeWuT9ESM9tJ_Q" base_Operation="_rJakkJwYEeWuT9ESM9tJ_Q" path="{path:.*}" produces="text/html"/>
+  <profile:FormParam xmi:id="_BxhG8JwmEeWuT9ESM9tJ_Q" name="name" base_Parameter="_9UdFwJwlEeWuT9ESM9tJ_Q"/>
 </xmi:XMI>

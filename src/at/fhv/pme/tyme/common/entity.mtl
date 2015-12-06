@@ -21,7 +21,7 @@ public class [aClass.name.toUpperFirst()/] {
 	[if (aClass.hasStereotype('Singleton'))]
 	static [aClass.name.toUpperFirst()/] _instance = null;
 
-	static [aClass.name.toUpperFirst()/] getInstance() {
+	public static [aClass.name.toUpperFirst()/] getInstance() {
 		if(_instance == null) {
 			_instance = new [aClass.name.toUpperFirst()/]();
 		}
