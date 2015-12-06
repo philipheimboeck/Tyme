@@ -127,6 +127,16 @@
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_fg0w0JwYEeWuT9ESM9tJ_Q" name="PageController">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_rJakkJwYEeWuT9ESM9tJ_Q" name="get">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zf6VcJwYEeWuT9ESM9tJ_Q" name="path">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_DU8UcJwZEeWuT9ESM9tJ_Q" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_mF0ngJmqEeWuTPlhAergsA" memberEnd="_mF1OkpmqEeWuTPlhAergsA _mF1Ok5mqEeWuTPlhAergsA" navigableOwnedEnd="_mF1Ok5mqEeWuTPlhAergsA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mF1OkJmqEeWuTPlhAergsA" source="org.eclipse.papyrus">
@@ -195,7 +205,7 @@
   <profile:RestMethod xmi:id="_b_ssEJmqEeWuTPlhAergsA" base_Operation="_KDBooJOrEeW9JJzMjfAEKA" path="searchTrack"/>
   <profile:RestMethod xmi:id="_ctN5YJmqEeWuTPlhAergsA" base_Operation="_y42yoJOrEeW9JJzMjfAEKA" path="getTracks"/>
   <profile:Entity xmi:id="_lhqKgJmqEeWuTPlhAergsA" base_Class="_kUcJcJmqEeWuTPlhAergsA"/>
-  <profile:Controller xmi:id="_wixHgJmqEeWuTPlhAergsA" base_Class="_2csiQJOqEeW9JJzMjfAEKA" path="tyme"/>
+  <profile:Controller xmi:id="_wixHgJmqEeWuTPlhAergsA" base_Class="_2csiQJOqEeW9JJzMjfAEKA" path="tyme/"/>
   <profile:PathParam xmi:id="_O0BfgJmrEeWuTPlhAergsA" name="track" base_Parameter="_ewmD4JOrEeW9JJzMjfAEKA"/>
   <profile:FormParam xmi:id="_hLtBcJmrEeWuTPlhAergsA" name="user" base_Parameter="_jz93IJOrEeW9JJzMjfAEKA"/>
   <profile:FormParam xmi:id="_sMkt4JmrEeWuTPlhAergsA" name="start" base_Parameter="_meFUAJOrEeW9JJzMjfAEKA"/>
@@ -225,4 +235,7 @@
   <profile:NavigationElement xmi:id="_mjXgIZwQEeWuT9ESM9tJ_Q" base_Property="_mjW5EZwQEeWuT9ESM9tJ_Q" url="search.html" label="Suche"/>
   <profile:NavigationElement xmi:id="_mjXgIpwQEeWuT9ESM9tJ_Q" base_Property="_mjW5EpwQEeWuT9ESM9tJ_Q" url="index.html" label="Alle Tracks"/>
   <profile:Singleton xmi:id="_s5AaQJwVEeWuT9ESM9tJ_Q" base_Class="_qe6zkJOoEeW9JJzMjfAEKA"/>
+  <profile:Controller xmi:id="_jwP-oJwYEeWuT9ESM9tJ_Q" base_Class="_fg0w0JwYEeWuT9ESM9tJ_Q" path="/"/>
+  <profile:PathParam xmi:id="_1BPlUJwYEeWuT9ESM9tJ_Q" name="path" base_Parameter="_zf6VcJwYEeWuT9ESM9tJ_Q"/>
+  <profile:RestMethod xmi:id="_MmKBIJwZEeWuT9ESM9tJ_Q" base_Operation="_rJakkJwYEeWuT9ESM9tJ_Q" path="{path:.*}"/>
 </xmi:XMI>
