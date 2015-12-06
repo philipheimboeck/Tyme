@@ -108,18 +108,6 @@ $(function() {
 
 function submit() {
 	//Start of user code submit
-$( document ).ready(function() {
-	$('form').on('submit',function(){
-		insert();
-		return false;
-	});
-});
-//End of user code
-}
-
-function insert() {
-	//Start of user code insert
-	//	TODO: Implement
 	$.ajax({
 		dataType: "json",
 		url: "http://localhost:8080/tyme/addTrack",
@@ -136,6 +124,12 @@ function insert() {
 		}
 	});
 	return false;
+//End of user code
+}
+
+function insert() {
+	//Start of user code insert
+	//	TODO: Implement
 	//End of user code
 }
 
