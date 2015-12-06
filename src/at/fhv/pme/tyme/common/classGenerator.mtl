@@ -40,8 +40,9 @@ import [classifier.getCompleteName()/];
 
 [template public generateProperties(aClass : Class)]
 [for (p : Property | aClass.attribute) separator('\n')]
-[p.visibility/] [if p.isStatic]static [/if][p.type.toJavaType()/] [p.name/];
+[p.visibility/] [if p.isStatic]static [/if][p.type.toJavaType()/] [p.name/][if (p.default <> null)] = "[p.default/]"[/if];
 [/for]
+
 [for (p : Property | aClass.attribute) separator('\n')]
 public [p.type.toJavaType()/] get[p.name.toUpperFirst()/]() {
 	return this.[p.name/];

@@ -1,6 +1,8 @@
+// Start of user code imports
 package at.fhv.pme.tyme.entities;
 
 
+// End of user code
 
 /**
  * Timetrack
@@ -25,6 +27,7 @@ public class Timetrack {
 	private String description;
 	
 	public User user;
+	
 	public int getId() {
 		return this.id;
 	}

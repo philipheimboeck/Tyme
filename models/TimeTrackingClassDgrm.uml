@@ -46,15 +46,15 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_ma_rIJOoEeW9JJzMjfAEKA" name="at.fhv.pme.tyme.persistence">
       <packagedElement xmi:type="uml:Class" xmi:id="_qe6zkJOoEeW9JJzMjfAEKA" name="DbFacade">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_29DIMJOoEeW9JJzMjfAEKA" name="host">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_29DIMJOoEeW9JJzMjfAEKA" name="dbhost">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <defaultValue xmi:type="uml:LiteralString" xmi:id="_b9O1oJwVEeWuT9ESM9tJ_Q" name="dbhost" value=""/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_b9O1oJwVEeWuT9ESM9tJ_Q" name="dbhost" value="localhost"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_78CKsJOoEeW9JJzMjfAEKA" name="user">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_78CKsJOoEeW9JJzMjfAEKA" name="dbuser">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_U-hXEJwVEeWuT9ESM9tJ_Q" name="dbuser" value="root"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_8i6kgJOoEeW9JJzMjfAEKA" name="pass">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8i6kgJOoEeW9JJzMjfAEKA" name="dbpass">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_Rm8-UJwVEeWuT9ESM9tJ_Q" name="dbpass" value="root"/>
         </ownedAttribute>
@@ -68,17 +68,32 @@
         <ownedOperation xmi:type="uml:Operation" xmi:id="_PoegIJOpEeW9JJzMjfAEKA" name="insertTimetrack">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_PoegIZOpEeW9JJzMjfAEKA" name="timeTrack" type="_2iHQgIMREeWnYoTeH9KJag"/>
         </ownedOperation>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_uMTO0JOpEeW9JJzMjfAEKA" name="getTimeTracks">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_83i7QJOpEeW9JJzMjfAEKA" type="_2iHQgIMREeWnYoTeH9KJag" direction="return"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_uMTO0JOpEeW9JJzMjfAEKA" name="getAllTimeTracks">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_83i7QJOpEeW9JJzMjfAEKA" type="_2iHQgIMREeWnYoTeH9KJag" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pV_JAJwhEeWuT9ESM9tJ_Q"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pWAXIJwhEeWuT9ESM9tJ_Q" value="*"/>
+          </ownedParameter>
         </ownedOperation>
         <ownedOperation xmi:type="uml:Operation" xmi:id="__dDk8JOpEeW9JJzMjfAEKA" name="getTimeTracks">
-          <ownedParameter xmi:type="uml:Parameter" xmi:id="_H3c-YJOqEeW9JJzMjfAEKA" name="username">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_H3c-YJOqEeW9JJzMjfAEKA" name="search">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           </ownedParameter>
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_J7J7gJOqEeW9JJzMjfAEKA" type="_2iHQgIMREeWnYoTeH9KJag" direction="return">
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NXEowJOqEeW9JJzMjfAEKA"/>
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NXQ2AJOqEeW9JJzMjfAEKA" value="*"/>
           </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_sbXlkJwhEeWuT9ESM9tJ_Q" name="getUser">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zd2J0JwhEeWuT9ESM9tJ_Q" name="id" effect="create">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_2izvoJwhEeWuT9ESM9tJ_Q" type="_kUcJcJmqEeWuTPlhAergsA" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_4iFfwJwhEeWuT9ESM9tJ_Q" name="getTimetrack">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_9lHUwJwhEeWuT9ESM9tJ_Q" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="__axO0JwhEeWuT9ESM9tJ_Q" type="_2iHQgIMREeWnYoTeH9KJag" direction="return"/>
         </ownedOperation>
       </packagedElement>
     </packagedElement>
@@ -153,7 +168,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_XvQLkJwQEeWuT9ESM9tJ_Q" name="search"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_X3jL8JwQEeWuT9ESM9tJ_Q" name="showAll"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_x3XhwJwBEeWuT9ESM9tJ_Q" name="search"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_mAk1wJwIEeWuT9ESM9tJ_Q" name="delete">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_mAk1wJwIEeWuT9ESM9tJ_Q" name="deleteTrack">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_xUrAMJwIEeWuT9ESM9tJ_Q" name="id" effect="delete">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedParameter>
@@ -177,7 +192,7 @@
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mjW5EZwQEeWuT9ESM9tJ_Q" name="search"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_mjW5EpwQEeWuT9ESM9tJ_Q" name="showAll"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_elxREJwIEeWuT9ESM9tJ_Q" name="getAll"/>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_kxrZsJwIEeWuT9ESM9tJ_Q" name="delete">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_kxrZsJwIEeWuT9ESM9tJ_Q" name="deleteTrack">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_tbERYJwIEeWuT9ESM9tJ_Q" name="id" effect="delete">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedParameter>
