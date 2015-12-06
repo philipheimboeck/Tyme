@@ -3,9 +3,7 @@ package at.fhv.pme.tyme.controller;
 
 
 import javax.ws.rs.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 // End of user code
 
 /**
@@ -22,12 +20,21 @@ public class PageController {
   		*/
   		@Path("{path:.*}")
   		@GET
-  		public String get(@PathParam("path") String path) {
+  		@Produces("text/html")
+  		public String get(@PathParam("path") String path) throws Exception {
   			// Start of user code get
         StringBuilder sb = new StringBuilder();
         try {
+            if(path.isEmpty()) {
+                throw new FileNotFoundException();
+            }
 
-            BufferedReader fileReader = new BufferedReader(new InputStreamReader(PageController.class.getResourceAsStream("/" + path)));
+            InputStream stream = PageController.class.getResourceAsStream("/" + path);
+            if(stream == null) {
+                throw new FileNotFoundException();
+            }
+
+            BufferedReader fileReader = new BufferedReader(new InputStreamReader(stream));
             String line = fileReader.readLine();
 
             while (line != null) {

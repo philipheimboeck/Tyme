@@ -4,6 +4,7 @@ package at.fhv.pme.tyme.persistence;
 import at.fhv.pme.tyme.entities.Timetrack;
 import at.fhv.pme.tyme.entities.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.sql.*;
 import java.util.HashSet;
 
@@ -16,7 +17,7 @@ public class DbFacade {
 
     static DbFacade _instance = null;
 
-    static DbFacade getInstance() {
+    public static DbFacade getInstance() {
         if (_instance == null) {
             _instance = new DbFacade();
         }
@@ -73,7 +74,7 @@ public class DbFacade {
     /**
      * deleteTimeTrack
      */
-    public void deleteTimeTrack(Timetrack timeTrack) {
+    public void deleteTimeTrack(Timetrack timeTrack) throws Exception {
         // Start of user code deleteTimeTrack
         Connection connection = null;
         PreparedStatement st = null;
@@ -109,7 +110,7 @@ public class DbFacade {
     /**
      * insertTimetrack
      */
-    public void insertTimetrack(Timetrack timeTrack) {
+    public void insertTimetrack(Timetrack timeTrack) throws Exception {
         // Start of user code insertTimetrack
         Connection connection = null;
         PreparedStatement st = null;
@@ -125,8 +126,6 @@ public class DbFacade {
             st.setString(4, timeTrack.getDescription());
             st.setInt(5, timeTrack.getUser().getId());
             st.executeUpdate();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
         } finally {
             if (st != null) {
                 try {
@@ -149,7 +148,7 @@ public class DbFacade {
     /**
      * getAllTimeTracks
      */
-    public java.util.Set<Timetrack> getAllTimeTracks() {
+    public java.util.Set<Timetrack> getAllTimeTracks() throws Exception {
         // Start of user code getAllTimeTracks
         java.util.Set<Timetrack> timetracks = new HashSet<>();
         Connection connection = null;
@@ -157,19 +156,24 @@ public class DbFacade {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
-            String query = "SELECT id, name, start_stamp, end_stamp, description, user_id FROM timetrack";
+            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id";
 
             st = connection.prepareStatement(query);
             ResultSet resultSet = st.executeQuery();
 
             while (resultSet.next()) {
+                User user = new User();
+
                 Timetrack timetrack = new Timetrack();
-                timetrack.setId(resultSet.getInt(0));
-                timetrack.setName(resultSet.getString(1));
-                timetrack.setStartStamp(resultSet.getLong(2));
-                timetrack.setEndStamp(resultSet.getLong(3));
-                timetrack.setDescription(resultSet.getString(4));
-                timetrack.setUser(getUser(resultSet.getInt(5)));
+                timetrack.setId(resultSet.getInt(1));
+                timetrack.setName(resultSet.getString(2));
+                timetrack.setStartStamp(resultSet.getLong(3));
+                timetrack.setEndStamp(resultSet.getLong(4));
+                timetrack.setDescription(resultSet.getString(5));
+                timetrack.setUser(user);
+
+                user.setId(resultSet.getInt(6));
+                user.setName(resultSet.getString(7));
 
                 timetracks.add(timetrack);
             }
@@ -200,7 +204,7 @@ public class DbFacade {
     /**
      * getTimeTracks
      */
-    public java.util.Set<Timetrack> getTimeTracks(String search) {
+    public java.util.Set<Timetrack> getTimeTracks(String search) throws Exception {
         // Start of user code getTimeTracks
         java.util.Set<Timetrack> timetracks = new HashSet<>();
         Connection connection = null;
@@ -208,7 +212,7 @@ public class DbFacade {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
-            String query = "SELECT id, name, start_stamp, end_stamp, description, user_id FROM timetrack INNER JOIN user ON timetrack.user_id = user.id WHERE timetrack.name LIKE ? OR user.name LIKE ?";
+            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id WHERE timetrack.name LIKE ? OR user.name LIKE ?";
 
             st = connection.prepareStatement(query);
             st.setString(1, "%" + search + "%");
@@ -216,13 +220,18 @@ public class DbFacade {
             ResultSet resultSet = st.executeQuery();
 
             while (resultSet.next()) {
+                User user = new User();
+
                 Timetrack timetrack = new Timetrack();
-                timetrack.setId(resultSet.getInt(0));
-                timetrack.setName(resultSet.getString(1));
-                timetrack.setStartStamp(resultSet.getLong(2));
-                timetrack.setEndStamp(resultSet.getLong(3));
-                timetrack.setDescription(resultSet.getString(4));
-                timetrack.setUser(getUser(resultSet.getInt(5)));
+                timetrack.setId(resultSet.getInt(1));
+                timetrack.setName(resultSet.getString(2));
+                timetrack.setStartStamp(resultSet.getLong(3));
+                timetrack.setEndStamp(resultSet.getLong(4));
+                timetrack.setDescription(resultSet.getString(5));
+
+                user.setId(resultSet.getInt(6));
+                user.setName(resultSet.getString(7));
+                timetrack.setUser(user);
 
                 timetracks.add(timetrack);
             }
@@ -253,7 +262,7 @@ public class DbFacade {
     /**
      * getUser
      */
-    public User getUser(int id) {
+    public User getUser(int id) throws Exception {
         // Start of user code getUser
         User user = null;
         Connection connection = null;
@@ -269,8 +278,8 @@ public class DbFacade {
 
             if (resultSet.next()) {
                 user = new User();
-                user.setId(resultSet.getInt(0));
-                user.setName(resultSet.getString(1));
+                user.setId(resultSet.getInt(1));
+                user.setName(resultSet.getString(2));
             }
 
         } catch (Exception e) {
@@ -298,7 +307,7 @@ public class DbFacade {
     /**
      * getTimetrack
      */
-    public Timetrack getTimetrack(int id) {
+    public Timetrack getTimetrack(int id) throws Exception {
         // Start of user code getTimetrack
         Timetrack timetrack = null;
         Connection connection = null;
@@ -306,20 +315,27 @@ public class DbFacade {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
-            String query = "SELECT id, name, start_stamp, end_stamp, description, user_id FROM timetrack WHERE timetrack.id = ?";
+            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id WHERE timetrack.id = ?";
 
             st = connection.prepareStatement(query);
             st.setInt(1, id);
             ResultSet resultSet = st.executeQuery();
 
             if (resultSet.next()) {
+
+                User user = new User();
+
                 timetrack = new Timetrack();
-                timetrack.setId(resultSet.getInt(0));
-                timetrack.setName(resultSet.getString(1));
-                timetrack.setStartStamp(resultSet.getLong(2));
-                timetrack.setEndStamp(resultSet.getLong(3));
-                timetrack.setDescription(resultSet.getString(4));
-                timetrack.setUser(getUser(resultSet.getInt(5)));
+                timetrack.setId(resultSet.getInt(1));
+                timetrack.setName(resultSet.getString(2));
+                timetrack.setStartStamp(resultSet.getLong(3));
+                timetrack.setEndStamp(resultSet.getLong(4));
+                timetrack.setDescription(resultSet.getString(5));
+                timetrack.setUser(getUser(resultSet.getInt(6)));
+                timetrack.setUser(user);
+
+                user.setId(resultSet.getInt(6));
+                user.setName(resultSet.getString(7));
             }
 
         } catch (Exception e) {
@@ -341,6 +357,93 @@ public class DbFacade {
             }
         }
         return timetrack;
+        // End of user code
+    }
+
+    /**
+     * insertUser
+     */
+    public void insertUser(User user) throws Exception {
+        // Start of user code insertUser
+        Connection connection = null;
+        PreparedStatement st = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
+            String query = "INSERT INTO user (name) VALUES (?)";
+
+            st = connection.prepareStatement(query);
+            st.setString(1, user.getName());
+            st.executeUpdate();
+
+            ResultSet rs = st.getGeneratedKeys();
+            if (rs.next()) {
+                user.setId(rs.getInt(1));
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        // End of user code
+    }
+
+    /**
+     * getUserByName
+     */
+    public User getUserByName(String name) throws Exception {
+        // Start of user code getUserByName
+        User user = null;
+        Connection connection = null;
+        PreparedStatement st = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
+            String query = "SELECT id, name FROM user WHERE user.name = ?";
+
+            st = connection.prepareStatement(query);
+            st.setString(1, name);
+            ResultSet resultSet = st.executeQuery();
+
+            if (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt(1));
+                user.setName(resultSet.getString(2));
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (st != null) {
+                try {
+                    st.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return user;
         // End of user code
     }
 }
