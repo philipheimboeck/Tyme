@@ -19,14 +19,15 @@
 <nav>
 [comment Other Elements /]
 	[for (p : Property | aClass.attribute) separator('\n')]
-	[if (p.hasStereotype('Navigation'))]
-		<a href="[p.getValue(p.getAppliedStereotype('profile::Navigation'), 'url')/]">[p.getValue(p.getAppliedStereotype('profile::Navigation'), 'label')/]</a>
+	[if (p.hasStereotype('NavigationElement'))]
+		<a href="[p.getValue(p.getAppliedStereotype('profile::NavigationElement'), 'url')/]">[p.getValue(p.getAppliedStereotype('profile::NavigationElement'), 'label')/]</a>
 	[/if]
 	[/for]
 
-	<!--[protected ('navigation')]
-	Add custom navigation
-	[/protected]-->
+	<!-- [protected ('navigation')]
+	 -->
+	<!-- Todo Add custom navigation-->
+	<!-- [/protected] -->
 </nav>
 
 </div>

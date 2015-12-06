@@ -16,6 +16,19 @@
  */
 public class [aClass.name.toUpperFirst()/] {
 
+	[if (aClass.hasStereotype('Singleton'))]
+	static [aClass.name.toUpperFirst()/] _instance = null;
+
+	static [aClass.name.toUpperFirst()/] getInstance() {
+		if(_instance == null) {
+			_instance = new [aClass.name.toUpperFirst()/]();
+		}
+		return _instance;
+	}
+	[/if]
+
+	[aClass.generateConstructor(aClass.hasStereotype('Singleton'))/]
+
 	[aClass.generateProperties()/]
 
 	[for (o : Operation | aClass.ownedOperation) separator('\n')]
