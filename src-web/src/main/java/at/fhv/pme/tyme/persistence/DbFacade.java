@@ -31,9 +31,9 @@ public class DbFacade {
 
 	public String dbhost = "localhost";
 	
-	public String dbuser = "root";
+	public String dbuser = "s4";
 	
-	public String dbpass = "root";
+	public String dbpass = "s4";
 	
 	public String dbname = "tyme";
 	
