@@ -2,12 +2,11 @@
 <html>
 <head>
 <title>Erstelle Timetrack</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <h1>Erstelle Timetrack</h1>
 
@@ -69,6 +68,8 @@
 
 </div>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 function submit() {
 	//Start of user code submit
@@ -80,11 +81,36 @@ function submit() {
 function insert() {
 	//Start of user code insert
 	//	TODO: Implement
-	console.log("insert");
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/tyme/addTrack",
+		type: "POST",
+		data: {
+			name: encodeURIComponent($('#name').val()),
+			user: encodeURIComponent($('#user').val()),
+			start: encodeURIComponent($('#start').val()),
+			end: encodeURIComponent($('#end').val()),
+			description: encodeURIComponent($('#description').val())
+		},
+		success: function (data) {
+			$(this).closest('form').find("input[type=text], textarea").val("");
+		}
+	});
+	return false;
 	//End of user code
 }
 
+//Start of user code submit
+$( document ).ready(function() {
+	$('form').on('submit',function(){
+		insert();
+		return false;
+	});
+});
+//End of user code
+
 </script>
+
 </body>
 </html>
 
