@@ -56,9 +56,11 @@
 		[for (p : Property | aClass.attribute) separator('<br/>\n')]
 		[if (p.hasStereotype('FormElement'))]
 		[if (p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label') <> null)]
-		<label for="[p.name/]">[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label')/]</label>
-		[/if]
-		<input type="[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'type')/]" name="[p.name/]" id="[p.name/]"/>
+		<div class="form-group">
+			<label for="[p.name/]">[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'label')/]</label>
+			[/if]
+			<input class="form-control" type="[p.getValue(p.getAppliedStereotype('profile::FormElement'), 'type')/]" name="[p.name/]" id="[p.name/]"/>
+		</div>
 		[/if]
 		[/for]
 		</form>
@@ -83,6 +85,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+$(function() {
+	//[protected ('documentLoad')]
+	// TODO: Document Load
+	//[/protected]
+});
+
 function submit() {
 	//[protected ('submit')]
 	//	TODO: Implement

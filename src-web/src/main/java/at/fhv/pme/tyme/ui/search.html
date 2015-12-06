@@ -48,12 +48,16 @@
 
 <div class="content">
 	<div id="forms">
-		<form method="" onsubmit="javascript:submit();">
-		<label for="search">Suchbegriff</label>
-		<input type="text" name="search" id="search"/>
+		<form method="" action="javascript:;" onsubmit="javascript:submit();">
+		<div class="form-group">
+			<label for="search">Suchbegriff</label>
+			<input class="form-control" type="text" name="search" id="search"/>
+		</div>
 <br/>
-		<label for="submit">Suchen</label>
-		<input type="submit" name="submit" id="submit"/>
+		<div class="form-group">
+			<label for="submit">Suchen</label>
+			<input class="form-control" type="submit" name="submit" id="submit"/>
+		</div>
 <br/>
 <br/>
 <br/>
@@ -87,6 +91,12 @@ End of user code-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+$(function() {
+	//Start of user code documentLoad
+	// TODO: Document Load
+	//End of user code
+});
+
 function submit() {
 	//Start of user code submit
 $( document ).ready(function() {
