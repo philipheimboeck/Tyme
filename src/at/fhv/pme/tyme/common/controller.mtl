@@ -8,8 +8,10 @@
 [template public generateController(aClass : Class)]
  
 [file (aClass.namespace.toPath().concat(aClass.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+// [protected('imports')]
 [aClass.generateImports()/]
 import javax.ws.rs.*;
+// [/protected]
 
 /**
  * [aClass.name/]

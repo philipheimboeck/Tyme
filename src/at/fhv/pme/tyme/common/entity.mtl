@@ -9,7 +9,9 @@
  
 
 [file (aClass.namespace.toPath().concat(aClass.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+// [protected('imports')]
 [aClass.generateImports()/]
+// [/protected]
 
 /**
  * [aClass.name/]
