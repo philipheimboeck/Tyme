@@ -30,8 +30,9 @@
 </div>
 
 <div class="content">
+<div class="container">
 	<div id="forms">
-		<form method="" onsubmit="return search();">
+		<form method="" onsubmit="javascript:submit();">
 		<label for="search">Suchbegriff</label>
 		<input type="text" name="search" id="search"/>
 <br/>
@@ -66,44 +67,14 @@ End of user code-->
 
 
 </div>
+</div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-
 function submit() {
 
 	//Start of user code submit
-	alert("onsubmit");
-	console.log("OnSubmit");
-	$.ajax({
-		dataType: "json",
-		url: "http://localhost:8080/tyme/search/" + encodeURIComponent($('#search').val()),
-		data: null,
-		success: function (data) {
-			$.each(data, function (idx, val) {
-				v = jQuery.parseJSON(val);
-				console.log(v);
-				$('#table tbody').append('<tr>' +
-				'<td>' + v.id + '</td>' +
-				'<td>' + v.name + '</td>' +
-				'<td>' + v.user + '</td>' +
-				'<td>' + v.startStamp + '</td>' +
-				'<td>' + v.endStamp + '</td>' +
-				'<td>' + v.description + '</td>' +
-				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
-				'</tr>');
-			});
-		}
-	});
-	return false;
-	//End of user code
-
-}
-
-
-function search() {
-	//Start of user code search
 	$.ajax({
 		dataType: "json",
 		url: "http://localhost:8080/tyme/searchTrack",
@@ -112,36 +83,47 @@ function search() {
 			$.each(data, function (idx, val) {
 				v = jQuery.parseJSON(val);
 				console.log(v);
-				$('#table tbody').append('<tr>' +
+				$('#table tbody').append('<tr id="row_'+ v.id +'">' +
 				'<td>' + v.id + '</td>' +
 				'<td>' + v.name + '</td>' +
 				'<td>' + v.user + '</td>' +
 				'<td>' + v.startStamp + '</td>' +
 				'<td>' + v.endStamp + '</td>' +
 				'<td>' + v.description + '</td>' +
-				'<td><a href="http://localhost:8080/tyme/deleteTrack/' + v.id + '">Delete</a></td>' +
+				'<td><button onclick="deleteTrack('+ v.id + ');" /></td>' +
 				'</tr>');
 			});
 		}
 	});
 	return false;
 	//End of user code
+
 }
 
-function deleteTrack() {
+function search() {
+	//Start of user code search
+	//End of user code
+}
+
+function deleteTrack(id) {
 	//Start of user code deleteTrack
 	//	TODO: Implement
-	console.log("deleteTrack");
+	$.ajax({
+		dataType: "json",
+		url: 'http://localhost:8080/tyme/deleteTrack/'+id,
+		type: "DELETE",
+		data: null,
+		success: function (data) {
+			$('#row_'+id).deleteRow();
+		}
+	});
+	return false;
+
 	//End of user code
 }
 
 //Start of user code submit
-$( document ).ready(function() {
-	$('form').on('submit',function(){
-		search();
-		return false;
-	});
-});
+//	TODO: Implement
 //End of user code
 
 </script>
