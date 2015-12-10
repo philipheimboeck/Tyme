@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>Erstelle Timetrack</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.css" />
 </head>
 <body>
 
@@ -49,48 +50,54 @@
 
 </div>
 
-<div class="content">
-	<div id="forms">
+<div class="content container">
+	<div id="forms" class="row">
 		<form method="" action="javascript:;" onsubmit="processForm();" class="form-horizontal col-sm-6 col-centered">
 		<div class="form-group">
 			<label for="name" class="col-sm-2 control-label">Bezeichnung</label>
 			<div class="col-sm-10">
-				<input class="form-control" type="text" name="name" id="name"/>
+				<input class="form-control "
+					type="text" name="name" id="name"/>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="user" class="col-sm-2 control-label">Benutzername</label>
 			<div class="col-sm-10">
-				<input class="form-control" type="text" name="user" id="user"/>
+				<input class="form-control "
+					type="text" name="user" id="user"/>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="start" class="col-sm-2 control-label">Start</label>
 			<div class="col-sm-10">
-				<input class="form-control" type="datetime-local" name="start" id="start"/>
+				<input class="form-control datetimepicker"
+					type="text" name="start" id="start"/>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="end" class="col-sm-2 control-label">Ende</label>
 			<div class="col-sm-10">
-				<input class="form-control" type="datetime-local" name="end" id="end"/>
+				<input class="form-control datetimepicker"
+					type="text" name="end" id="end"/>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="description" class="col-sm-2 control-label">Beschreibung</label>
 			<div class="col-sm-10">
-				<input class="form-control" type="text" name="description" id="description"/>
+				<input class="form-control "
+					type="text" name="description" id="description"/>
 			</div>
 		</div>
 
 		<div class="form-group">
 			<label for="submit" class="col-sm-2 control-label">Eintragen</label>
 			<div class="col-sm-10">
-				<input class="form-control" type="submit" name="submit" id="submit"/>
+				<input class="form-control "
+					type="submit" name="submit" id="submit"/>
 			</div>
 		</div>
 
@@ -99,6 +106,7 @@
 		</form>
 	</div>
 	
+	<div class="row">
 
 
 
@@ -107,14 +115,17 @@
 
 
 
+	</div>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/jquery.datetimepicker.full.min.js"></script>
 
 <script type="text/javascript">
 $(function() {
+	$('.datetimepicker').datetimepicker();
 	//Start of user code documentLoad
-	// TODO: Document Load
+	// Todo
 	//End of user code
 });
 
@@ -127,8 +138,8 @@ function processForm() {
 function insert() {
 	//Start of user code insert
 
-	date = getDate($('#start'));
-	dateEnd = getDate($('#end'));
+	var date = getDate($('#start'));
+	var dateEnd = getDate($('#end'));
 
 	$.ajax({
 		dataType: "json",
@@ -147,15 +158,14 @@ function insert() {
 		}
 	});
 	return false;
-	console.log("insert");
 	//End of user code
 }
 
 //Start of user code js_code
 function getDate(dateElem) {
-	v = parseInt($(dateElem).val(), 10);
-	if ( v > 0 ) {
-		return new Date(v*1000);
+	var value = dateElem.val();
+	if(value && value.length > 0) {
+		return new Date(value);
 	}
 	alert('invalid input for datetime');
 	return null;

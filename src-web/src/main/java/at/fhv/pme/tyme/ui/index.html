@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>Timetracks</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.4.5/jquery.datetimepicker.css" />
 </head>
 <body>
 
@@ -44,8 +45,8 @@
 
 </div>
 
-<div class="content">
-	<div id="forms">
+<div class="content container">
+	<div id="forms" class="row">
 		<form method="" action="javascript:;" onsubmit="processForm();" class="form-horizontal col-sm-6 col-centered">
 
 
@@ -53,6 +54,7 @@
 		</form>
 	</div>
 	
+	<div class="row">
 	<table id="table" class="table">
 		<thead>
 <th>ID</th>
@@ -65,19 +67,22 @@
 </thead>
 		<tbody>
 		<!--Start of user code table
-		Implement Custom Rows
-End of user code-->
+            Implement Custom Rows
+    End of user code-->
 		</tbody>
 	</table>
 
 
 
+	</div>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/jquery.datetimepicker.full.min.js"></script>
 
 <script type="text/javascript">
 $(function() {
+	$('.datetimepicker').datetimepicker();
 	//Start of user code documentLoad
 	$.ajax({
 		dataType: "json",

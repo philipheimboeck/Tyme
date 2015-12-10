@@ -153,7 +153,7 @@ public class DbFacade {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
-            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id";
+            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id ORDER BY timetrack.id DESC";
 
             st = connection.prepareStatement(query);
             ResultSet resultSet = st.executeQuery();
@@ -207,7 +207,7 @@ public class DbFacade {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://" + dbhost + "/" + dbname, dbuser, dbpass);
-            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id WHERE timetrack.name LIKE ? OR user.name LIKE ?";
+            String query = "SELECT timetrack.id, timetrack.name, timetrack.start_stamp, timetrack.end_stamp, timetrack.description, user.id, user.name FROM timetrack INNER JOIN user ON timetrack.user_id = user.id WHERE timetrack.name LIKE ? OR user.name LIKE ? ORDER BY timetrack.id DESC";
 
             st = connection.prepareStatement(query);
             st.setString(1, "%" + search + "%");
